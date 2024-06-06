@@ -1,0 +1,302 @@
+#nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    
+
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur106.cur), auto !important;
+    border-bottom: none;
+    transition: border-bottom 0.5s ease-in-out;
+   
+}
+#nav:hover{
+    border-bottom: 1px solid black;
+}
+#nav li{
+    margin-left: 2vw;
+    margin-right: 2vw;
+    
+}
+
+#nav li:first-child{
+   margin-right: auto;
+   width: 30%;
+}
+#nav a:hover{
+    animation: hoverEffect 1s infinite;
+
+}
+
+a span{
+    padding: 1%;
+    background-color: aliceblue;
+}
+
+a span:hover {
+    
+    animation: hoverEffect 1s infinite, backgroundEffect 1s infinite;
+  }
+  
+  @keyframes hoverEffect {
+    0% { color: red; }
+    25% { color: orange; }
+    50% { color: yellow; }
+    75% { color: green; }
+    100% { color: blue; }
+  }
+  @keyframes backgroundEffect {
+    0% { background-color: blue; }
+    25% { background-color: green; }
+    50% { background-color: yellow; }
+    75% { background-color: orange; }
+    100% { background-color: red; }
+  }
+
+#title{
+    font-size: 2em;
+    font-weight: 700;
+   
+}
+#profile{
+
+padding-top: 17vh;
+padding-left: 3vw;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+height: 90vh;
+width: 100%;
+gap: 3vh;
+}
+#profile p{
+    width: 50vw;
+    text-align: left;
+    margin: 2rem;
+}
+#moses{
+    padding-top:4vh ;
+    padding-bottom: 4vh;
+    padding-left: 7vw;
+    padding-right: 7vw;
+   margin-right: -1vw;
+    border: 3px solid rgb(80, 37, 233);
+
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
+
+    font-size:xx-large;
+    font-weight: 500;
+    
+}
+
+#saruni{
+    padding-top:7vh ;
+    padding-bottom: 7vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-left: -5vw;
+    border: 3px solid rgb(248, 33, 33);
+
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
+
+    font-size:xx-large;
+    font-weight: 500;
+    transition: margin-left 0.5s ease-in-out;
+    z-index: 1;
+}
+#saruni:hover{
+    margin-left: 3vw;
+}
+#work{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   width: 40vw;
+   height: 80vh;
+   
+
+}
+#work ul{
+   list-style-type: none;
+   line-height:9vh;
+}
+#work ul li{
+    font-size: x-large;
+
+ }
+ #hobbies{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+ }
+
+ .not-visible{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+ }
+ 
+ .hobbies-visible{
+    opacity: 1;
+    
+margin: 0;
+    width: 100%;
+    height: 10vh;
+ }
+ .hobbies-visible li{
+    text-align: center;
+    margin: 0;
+    width: 16vw;
+    height: 100%;
+ }
+.hobbies-visible li:first-child{
+    
+    background-color: rgb(247, 184, 184);
+    
+}
+.hobbies-visible li:nth-child(2){
+    
+    background-color: rgb(248, 212, 145);
+    
+}
+.hobbies-visible li:nth-child(3){
+    
+    background-color: rgb(250, 250, 158);
+    
+}
+.hobbies-visible li:nth-child(4){
+    
+    background-color: rgb(180, 247, 180);
+    
+}
+.hobbies-visible li:nth-child(5){
+    
+    background-color: rgb(187, 187, 250);
+    
+}
+.hobbies-visible li:nth-child(6){
+    
+    background-color: rgb(215, 169, 248);
+    
+}
+
+#projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.project-div{
+    height: 115vh;
+width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+
+}
+.project-details{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    align-items: left;
+}
+.project-image{
+    width: 50vw;
+    height: 60%;
+    
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.project-div a{
+    margin-top: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 4px;
+    transition: background-color 0.5s ease-in-out;
+    
+}
+.project-div a:hover{
+    background-color:rgb(222, 224, 222) ;
+}
+
+#nuria{
+    background-image: url("/nuria.png");
+    border: 6px solid rgb(222, 224, 222);
+    background-size: cover;
+}
+#fool{
+    background-image: url("/fool.png");
+    border: 6px solid rgba(83, 47, 47, 0.281);
+    background-size: cover;
+}
+#zeraki{
+    background-image: url("/zeraki.png");
+    border: 6px solid rgb(213, 216, 213);
+    background-size: cover;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+   
+    height: 60vh;
+ 
+}
+
+#contact a{
+    
+  
+    color: black;
+    transition: color 0.6s ease-in-out,border-bottom o.2s ease-in-out;
+}
+#contact a:hover{
+    color: rgb(79, 80, 82);
+   border-bottom: 3px solid rgba(83, 47, 47, 0.281);
+}
+
+.span1{
+    padding-top: 2px;
+    padding-bottom: 2px;
+transition: background-color 0.5s ease-in-out;
+}
+.span2{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: background-color 0.5s ease-in-out;
+}
+.span1:hover{
+    background-color: rgb(80, 37, 233) ;
+}
+.span2:hover{
+    background-color: rgb(248, 33, 33);
+}
+#circles{
+    display: inline-block;
+    position: fixed;
+    width: 1500px;
+    height: 1000px;
+    z-index: -1;
+    border: 1px solid black;
+    border-radius: 50%;
+}
