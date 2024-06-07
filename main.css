@@ -353,7 +353,7 @@ transition: background-color 0.5s ease-in-out;
     .project-div{
         height: 100vh;
     width: 100vw;
-    padding: 4px;
+    padding: 6px;
         
     
     }
@@ -374,6 +374,10 @@ transition: background-color 0.5s ease-in-out;
        
         height: 50vh;
      
+    }
+    #contact img{
+        width: 20vw;
+        height: 5vh;
     }
     
     
