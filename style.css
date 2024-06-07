@@ -6,6 +6,14 @@
   color-scheme: light dark;
   color: rgba(8, 8, 8, 0.87);
   background-color: #fdfafa;
+  --secondary-color: rgba(83, 47, 47, 0.281);
+  --tertiary-color: aliceblue;
+  --accent-color: rgb(80, 37, 233);
+  --primary-color: #fdfafa;
+  --accompany-color: rgb(248, 33, 33);
+  --contrast-color:black;
+  --complement-color: rgb(167, 161, 161);
+  --highlight-color:coral;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,7 +38,7 @@ body {
   box-sizing: border-box;
 }
 a{
-  color:coral;
+  color:var(--highlight-color);
   font-weight: 600;
   text-decoration: none;
   cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur106.cur), auto !important;
@@ -48,8 +56,24 @@ p{
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: #fafcfd;
-    background-color: #0a0a0a;
+    color: rgba(245, 245, 245, 0.87); /* Light text color for dark background */
+background-color: #1a1a1a; /* Dark background color */
+--secondary-color: rgba(170, 170, 170, 0.281); /* Muted secondary color */
+--tertiary-color: #2c3e50; /* Darker shade for tertiary color */
+--accent-color: rgb(80, 37, 233); /* Keeping the same accent color for consistency */
+--primary-color: #1a1a1a; /* Same as background color */
+--accompany-color: rgb(248, 33, 33); /* Keeping the same accompany color */
+--contrast-color: white; /* Light contrast color for dark theme */
+--complement-color: rgb(88, 88, 88); /* Darker shade for complement color */
+--highlight-color: coral; /* Keeping the same highlight color for consistency */
+
+  }
+  
+}
+
+@media screen and (max-width:800px) {
+  body{
+    width: 100vw;
   }
   
 }

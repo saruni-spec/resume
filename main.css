@@ -17,7 +17,7 @@
    
 }
 #nav:hover{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--contrast-color);
 }
 #nav li{
     margin-left: 2vw;
@@ -36,7 +36,7 @@
 
 a span{
     padding: 1%;
-    background-color: aliceblue;
+    background-color: var(--tertiary-color);
 }
 
 a span:hover {
@@ -87,7 +87,7 @@ gap: 3vh;
     padding-left: 7vw;
     padding-right: 7vw;
    margin-right: -1vw;
-    border: 3px solid rgb(80, 37, 233);
+    border: 3px solid var(--accent-color);
 
     cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
 
@@ -102,7 +102,7 @@ gap: 3vh;
     padding-left: 10vw;
     padding-right: 10vw;
     margin-left: -5vw;
-    border: 3px solid rgb(248, 33, 33);
+    border: 3px solid var(--accompany-color);
 
     cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
 
@@ -116,7 +116,7 @@ gap: 3vh;
 }
 #work{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
    width: 40vw;
@@ -157,6 +157,7 @@ margin: 0;
     margin: 0;
     width: 16vw;
     height: 100%;
+    color: black;
  }
 .hobbies-visible li:first-child{
     
@@ -235,22 +236,22 @@ width: 100%;
     
 }
 .project-div a:hover{
-    background-color:rgb(222, 224, 222) ;
+    background-color:var(--primary-color) ;
 }
 
 #nuria{
     background-image: url("/nuria.png");
-    border: 6px solid rgb(222, 224, 222);
+    border: 6px solid var(--primary-color);
     background-size: cover;
 }
 #fool{
     background-image: url("/fool.png");
-    border: 6px solid rgba(83, 47, 47, 0.281);
+    border: 6px solid var(--secondary-color);
     background-size: cover;
 }
 #zeraki{
     background-image: url("/zeraki.png");
-    border: 6px solid rgb(213, 216, 213);
+    border: 6px solid var(--primary-color);
     background-size: cover;
 }
 
@@ -267,12 +268,12 @@ width: 100%;
 #contact a{
     
   
-    color: black;
+    color: var(--contrast-color);
     transition: color 0.6s ease-in-out,border-bottom o.2s ease-in-out;
 }
 #contact a:hover{
-    color: rgb(79, 80, 82);
-   border-bottom: 3px solid rgba(83, 47, 47, 0.281);
+    color:var(--complement-color);
+   border-bottom: 3px solid var(--secondary-color);
 }
 
 .span1{
@@ -286,17 +287,93 @@ transition: background-color 0.5s ease-in-out;
     transition: background-color 0.5s ease-in-out;
 }
 .span1:hover{
-    background-color: rgb(80, 37, 233) ;
+    background-color: var(--accent-color) ;
 }
 .span2:hover{
-    background-color: rgb(248, 33, 33);
+    background-color: var(--accompany-color);
 }
-#circles{
-    display: inline-block;
-    position: fixed;
-    width: 1500px;
-    height: 1000px;
-    z-index: -1;
-    border: 1px solid black;
-    border-radius: 50%;
+
+
+@media screen and (max-width:800px) {
+    #nav{
+       
+        width: 100vw;
+        height: 15vh;
+        justify-content: space-evenly;
+       
+    }
+  
+    #nav li{
+        margin: 2px;
+        
+    }
+    
+ 
+
+    #profile{
+    
+    flex-direction: column;
+    justify-content: center;
+   
+    }
+    #profile p{
+        width: 75vw;
+    }
+   
+    #work{
+        
+       width: 90vw;
+       height: 40vh;
+       
+    
+    }
+    #work ul{
+      
+       line-height:5vh;
+    }
+   
+     #hobbies{
+       width: 100vw;
+     }
+    
+  
+     .hobbies-visible{
+        width: 100vw;
+     }
+
+   
+    
+    #projects{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .project-div{
+        height: 90vh;
+    width: 100vw;
+        
+    
+    }
+    .project-details{
+        width: 100vw;
+       
+    }
+    .project-image{
+        width: 100vw;
+        height: 50vh;
+        
+        
+    }
+  
+    
+    #contact{
+        width: 100vw;
+       
+        height: 50vh;
+     
+    }
+    
+    
 }
