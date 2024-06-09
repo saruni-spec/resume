@@ -447,9 +447,10 @@ transition: background-color 0.5s ease-in-out;
         flex-wrap: wrap;
     }
     .project-div{
-        height: 100vh;
+        height: 70vh;
     width: 100vw;
-    padding: 15%;
+    padding: 10%;
+    font-size: 18px;
     justify-content: space-evenly;
         
     
@@ -459,23 +460,27 @@ transition: background-color 0.5s ease-in-out;
        
     }
     .project-image{
-        width: 60vw;
-        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     #nuria{
-        height: 20vh;
-        object-fit:fill;
-      
+        width: 80vw;
+        height: 25vh;
+        object-fit: fill;
+   
         
     }
     #fool{
-        height: 20vh;
-        object-fit:fill;
+        width: 80vw;
+        height: 25vh;
+        object-fit: fill;
         
     }
     #zeraki{
-        height: 21vh;
-        object-fit:fill;
+        width: 80vw;
+        height: 25vh;
+        object-fit: fill;
         
     }
     
