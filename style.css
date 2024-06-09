@@ -6,9 +6,8 @@
   color-scheme: light dark;
   color: rgba(8, 8, 8, 0.87);
   background-color: #fdfafa;
-  --secondary-color: rgba(83, 47, 47, 0.281);
+  --secondary-color: #E6E6FA;
   --tertiary-color: aliceblue;
-  --accent-color: rgb(80, 37, 233);
   --primary-color: #fdfafa;
   --accompany-color: rgb(248, 33, 33);
   --contrast-color:black;
