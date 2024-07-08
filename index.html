@@ -39,9 +39,9 @@
       
     </div>
     <div id="hobbies" class="not-visible">
-      <h1>Designer</h1>
-      <h1>&lt;&nbsp;Coder&nbsp;&gt;</h1>
-        <h1>Developer</h1>
+      <h2>Design</h2>
+      <h2 id="code">&lt;&nbsp;Code/&nbsp;&gt;</h2>
+        <h2>Develop</h2>
 
     </div>
     <div id="projects">
@@ -49,22 +49,31 @@
     
      
       <div class="project-div">
-        <a href="https://nuria.web.app/" class="project-details">
+        <div class="project-details">
         <h2>Nuria</h2>
         <p>E-Commerce</p>
-      </a>
-        <img src="nuria.png" alt="Nuria" class="project-image"/>
+        </div>
+      <div  class="project-image" style="background-image: url('nuria.png');">
+
+        <a href="https://nuria.web.app/" class="project-details">
+          Visit Site
+        </a>
+      </div>
         
        
       </div>
 
 
       <div class="project-div" >
-        <img src="/fool.png" alt="Wise Fool" class="project-image" />
-        <a href="https://wisefool.pythonanywhere.com/article/the-fool" class="project-details">
+        <div class="project-image" style="background-image: url('/fool.png');">
+          <a href="https://wisefool.pythonanywhere.com/article/the-fool" class="project-details">
+            Visit Site
+          </a>
+        </div>
+        <div class="project-details">
         <h2>Wise Fool</h2>
         <p>Blog Site</p>
-      </a>
+        </div>
        
         
          
@@ -74,11 +83,31 @@
 
 
       <div class="project-div" >
-        <a href="https://briantech.web.app/" class="project-details">
+        <div class="project-details">
         <h2>Brian Technologies</h2>
         <p>Catalog</p>
-      </a>
-        <img src="/brian.png" alt="Brian Tech" class="project-image" />
+        </div>
+      <div class="project-image" style="background-image: url('/brian.png');">
+        <a href="https://briantech.web.app/" class="project-details">
+          Visit Site
+        </a>
+      </div>
+          
+      
+      </div>
+
+      
+      <div class="project-div" >
+        <div class="project-image" style="background-image: url('/kickoff.png');">
+          <a href="https://kickoff-challenge-football.web.app/" class="project-details">
+            Visit Site
+          </a>
+        </div>
+        <div class="project-details">
+        <h2>Kick Off Challenge</h2>
+        <p>Sports Entertainment</p>
+        </div>
+        
           
       
       </div>
@@ -88,35 +117,128 @@
 
 
     <div id="contact">
-      <h2>Contact Me <span> ;)</span></h2>
-<div>
-      <a href="mailto:smithsaruni16@gmail.com" target="_blank" rel="noopener noreferrer"><img src="/images.jpeg" alt="Email"/>
+      <h2>Contact Me <span> &nbsp;;)</span></h2>
+<div class="contact-list">
+  <div class="icon">
+      <a  href="mailto:smithsaruni16@gmail.com" target="_blank" rel="noopener noreferrer"><img src="/images.jpeg" alt="Email"/>
        
 </a>
-      <a href="https://www.linkedin.com/in/moses-saruni-ba6653234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="/Untitled.png" alt="Linked In"/></imh></a>
-      </div>
+</div>
+<div class="icon">
+      <a class="icon" href="https://www.linkedin.com/in/moses-saruni-ba6653234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="/Untitled.png" alt="Linked In"/></imh></a>
+    </div> 
+    </div>
       
     </div>
 
 
-    <script >
-      var profileElement = document.getElementById("saruni");
-var hobbiesElement = document.getElementById("hobbies");
+    <script>
+    var profileElement = document.getElementById("saruni");
+var codeElement = document.getElementById("code");
+var textToType = "<Hello Visitor ";
+var originalText = "<code/>";
+var newText = "< Interested..? Contact Me ;) >";
+var index = 0;
+var isTyping = false;
+var typingInterval, backspacingInterval;
+
+function typeEffect(text, nextAction) {
+    if (index < text.length) {
+        codeElement.textContent += text.charAt(index);
+        index++;
+        typingInterval = setTimeout(() => typeEffect(text, nextAction), 100);
+    } else {
+        isTyping = false;
+        index = 0;
+        if (nextAction) {
+            setTimeout(nextAction, 1000); // Wait for 1 second before next action
+        }
+    }
+}
+
+function backspaceEffect(nextAction) {
+    if (codeElement.textContent.length > 0) {
+        codeElement.textContent = codeElement.textContent.slice(0, -1);
+        backspacingInterval = setTimeout(() => backspaceEffect(nextAction), 50);
+    } else {
+        clearTimeout(backspacingInterval);
+        if (nextAction) {
+            nextAction();
+        }
+    }
+}
 
 profileElement.addEventListener("mouseover", function () {
-  hobbiesElement.classList.remove("not-visible");
-  hobbiesElement.classList.add("hobbies-visible");
-  console.log("hovering");
+    if (!isTyping) {
+        isTyping = true;
+        index = 0;
+        codeElement.textContent = '';
+        clearTimeout(typingInterval);
+        clearTimeout(backspacingInterval);
+        typeEffect(textToType);
+    }
 });
 
 profileElement.addEventListener("mouseout", function () {
-  hobbiesElement.classList.remove("hobbies-visible");
-  hobbiesElement.classList.add("not-visible");
-  console.log("not hovering");
+    clearTimeout(typingInterval);
+    backspaceEffect(() => {
+        typeEffect(newText, () => {
+            backspaceEffect(() => {
+                typeEffect(originalText);
+            });
+        });
+    });
 });
-
     </script>
-   
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const target = document.getElementById("hobbies");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => { // Iterate over entries
+      if (entry.isIntersecting) {
+        console.log("observing");
+        entry.target.classList.remove("not-visible"); // Use entry.target
+        entry.target.classList.add("hobbies-visible");
+        
+      } else {
+        console.log("observing");
+        entry.target.classList.add("not-visible"); // Use entry.target
+        entry.target.classList.remove("hobbies-visible");
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  });
+
+  observer.observe(target);
+});
+    </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const targets = document.querySelectorAll('.project-div');
+    
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      });
+    
+      targets.forEach(target => {
+        observer.observe(target);
+      });
+    });
+        </script>
     
   </body>
 </html>
