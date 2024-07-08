@@ -72,7 +72,7 @@ background-color: #1a1a1a; /* Dark background color */
 
 @media screen and (max-width:800px) {
   body{
-    width: 100vw;
+    padding: 0;
   }
   
 }
