@@ -398,15 +398,20 @@ transition: background-color 0.5s ease-in-out;
     }
  
 
+    #saruni{
+        margin-left: 3vw;
+    }
    
      #hobbies{
-       width: 94%;
+       width: 100%;
        position: relative;
-       left: 6%;
+       left: 0;
        margin-top: 10%;
        margin-bottom: 10%;
        height: 55vw;
+       border-left:none ;
      }
+
     
   
      .hobbies-visible{
