@@ -447,6 +447,10 @@ transition: background-color 0.5s ease-in-out;
         color: transparent;
        
       }
+      .project-link:hover{
+        background-color:transparent;
+     
+    }
       
     .project-details{
         display: none;
