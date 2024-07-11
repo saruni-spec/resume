@@ -232,6 +232,7 @@ gap: 3vh;
     height: 100%;
     opacity: 0;
     transition: opacity 0.3s ease;
+    
   }
   
  
@@ -242,29 +243,27 @@ gap: 3vh;
   .project-image:hover::before {
     opacity: 0.5;
   }
-  .project-image a {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
+
   .project-image:hover a {
     opacity: 1;
-    filter: none;
-    z-index: 1;
+ 
+  
   }
   
 
-.project-div a{
+.project-link{
+    opacity: 0;
     margin-top: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 12px;
     padding-right: 12px;
     border-radius: 4px;
-    transition: background-color 0.5s ease-in-out,transform 800ms;
+    transition: background-color 0.5s ease-in-out,transform 800ms,opacity 0.3s ease;
+   
     
 }
-.project-div a:hover{
+.project-link:hover{
     background-color:var(--primary-color) ;
     transform: translateY(-7px) scale(1.1);
     transition: transform 300ms;
@@ -439,6 +438,16 @@ transition: background-color 0.5s ease-in-out;
         
     
     }
+    .project-link {
+    
+    padding: 20%;
+    background-color: transparent;
+        opacity: 1;
+        z-index: 1;
+        color: transparent;
+       
+      }
+      
     .project-details{
         display: none;
        
