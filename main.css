@@ -1,11 +1,8 @@
 #nav{
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     height: 15vh;
-    
-
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -20,11 +17,15 @@
     border-bottom: 1px solid var(--contrast-color);
 }
 #nav li{
-    margin-left: 2%;
     margin-right: 2%;
     
 }
 
+#title{
+    font-size: 2rem;
+   
+   
+}
 #nav li:first-child{
    margin-right: auto;
    width: 30%;
@@ -59,16 +60,12 @@ a span:hover {
     100% { background-color: red; }
   }
 
-#title{
-    font-size: 2em;
-    font-weight: 700;
-   
-}
 #scroll-watcher{
     height: 10px;
-    width: 100%;
+    width: 90%;
     position: fixed;
     top: 0;
+    left: 1%;
     z-index: 1;
     background-color: var(--highlight-color);
 
@@ -81,16 +78,14 @@ a span:hover {
 }
 
 #profile{
-
-padding-top: 17vh;
-padding-left: 3vw;
+margin-top: 2%;
 display: flex;
 flex-direction: row;
 justify-content: flex-start;
 align-items: center;
 height: 100svh;
 width: 100%;
-gap: 3vh;
+gap: 2rem;
 
 }
 #profile p{
@@ -99,11 +94,11 @@ gap: 3vh;
     margin: 2rem;
 }
 #moses{
-    padding-top:1.5rem;
-    padding-bottom: 1.5rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-   margin-right: 1.5rem;
+    padding-top:1.7rem;
+    padding-bottom: 1.7rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+   margin-right: 1.7rem;
     border: 3px solid var(--accent-color);
 
     cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
@@ -114,11 +109,11 @@ gap: 3vh;
 }
 
 #saruni{
-    padding-top:3rem ;
-    padding-bottom: 3rem;
-    padding-left: 6.5rem;
-    padding-right: 6.5rem;
-    margin-left: -3.5rem;
+    padding-top:3.5rem ;
+    padding-bottom: 3.5rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    margin-left: -4rem;
     border: 3px solid var(--accompany-color);
 
     cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
@@ -192,7 +187,7 @@ gap: 3vh;
     color: var(--contrast-color);
 }
 .project-image {
-    width: 30vw;
+    width: 30%;
     height: 90%;
     display: flex;
     align-items: center;
@@ -266,11 +261,11 @@ gap: 3vh;
     flex-direction: row;
     
     align-items: center;
-    gap: 2vw;
+    gap: 2rem;
 
 }
 #contact h2{
-    width: 30vw;
+    width: 30%;
     height: 90%;
     
   
@@ -342,33 +337,27 @@ transition: background-color 0.5s ease-in-out;
 
 
 @media screen and (max-width:800px) {
-    #nav{
-       
-        width: 100%;
-        height: 15vh;
-        justify-content: space-evenly;
-       
-    }
-  
-    #nav li{
-        margin: 4px;
-        
-    }
-    
  
+    
+    #title{
+        font-size: 1.4rem;
+
+    }
 
     #profile{
         padding-left: 0;
-    
+       
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
+  
+   
     margin-bottom: 10%;
-    margin-top: 10%;
+    margin-top: 15%;
+    padding-top: 40%;
    
     }
     #profile p{
         width: 100%;
+        padding-left: 1rem;
    
         
     }
@@ -389,8 +378,9 @@ transition: background-color 0.5s ease-in-out;
     }
    
      #hobbies{
+        margin-top: 35%;
        width: 100%;
-       height: 50%;
+       
      }
 
    
@@ -401,11 +391,11 @@ transition: background-color 0.5s ease-in-out;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin-top:10%;
+       
     }
     .project-div{
         height: 30vh;
-    width: 100%;
+    width: 90%;
    
   
     justify-content: center;
@@ -455,8 +445,8 @@ transition: background-color 0.5s ease-in-out;
         text-align: center;
     }
     #contact img{
-        width: 20vw;
-        height: 5vh;
+        width: 4rem;
+        height: 4rem;
     }
     
     
