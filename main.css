@@ -70,7 +70,7 @@ a span:hover {
     position: fixed;
     top: 0;
     z-index: 1;
-    background-color: var(--secondary-color);
+    background-color: var(--highlight-color);
 
     scale: 0 1;
     animation: scroll-watcher linear;
@@ -94,16 +94,16 @@ gap: 3vh;
 
 }
 #profile p{
-    width: 50vw;
+    width: 50%;
     text-align: left;
     margin: 2rem;
 }
 #moses{
-    padding-top:4vh ;
-    padding-bottom: 4vh;
-    padding-left: 7vw;
-    padding-right: 7vw;
-   margin-right: -1vw;
+    padding-top:1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+   margin-right: 1.5rem;
     border: 3px solid var(--accent-color);
 
     cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
@@ -114,11 +114,11 @@ gap: 3vh;
 }
 
 #saruni{
-    padding-top:7vh ;
-    padding-bottom: 7vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    margin-left: -5vw;
+    padding-top:3rem ;
+    padding-bottom: 3rem;
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
+    margin-left: -3.5rem;
     border: 3px solid var(--accompany-color);
 
     cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
@@ -129,18 +129,9 @@ gap: 3vh;
     z-index: 1;
 }
 #saruni:hover{
-    margin-left: 3vw;
+    margin-left: 3rem;
 }
-#work{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   width: 40vw;
-   height: 80vh;
-   
 
-}
   #hobbies {
     list-style-type: none;
     display: flex;
@@ -148,17 +139,13 @@ gap: 3vh;
     justify-content: center;
     align-items: flex-start;
     line-height: -0.1rem;
-    position: absolute;
-    top: 35%;
-    transition: left 2s ease; /* Changed from transform to left */
-    border-top: 3px solid var(--accent-color);
-    border-bottom: 3px solid var(--accent-color);
-    border-left: 3px solid var(--accent-color);
+    width: 50%;
+    
     padding: 2%;
 }
 #hobbies h2{
     font-size: 3rem;
-    letter-spacing: -50%rem;
+    letter-spacing: -70%rem;
     margin: 0;
     padding: 0;
     
@@ -167,16 +154,8 @@ gap: 3vh;
     color: var(--complement-color);
 }
 
-.not-visible {
-    left: 96.5%;
-    transition: left 3s ease;
-   
-}
 
-.hobbies-visible {
-    left: 65%;
-    transition: left 3s ease;
-}
+
 
 #projects{
     display: flex;
@@ -207,8 +186,8 @@ gap: 3vh;
    
     display: flex;
     flex-direction: column;
-    justify-content:left;
-    align-items: left;
+    justify-content:center;
+    align-items:flex-start;
     margin: 1rem;
     color: var(--contrast-color);
 }
@@ -218,9 +197,11 @@ gap: 3vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     transition: transform 0.3s ease, filter 0.3s ease;
     position: relative;
+  
   }
   
   .project-image::before {
@@ -267,10 +248,6 @@ gap: 3vh;
     background-color:var(--primary-color) ;
     transform: translateY(-7px) scale(1.1);
     transition: transform 300ms;
-}
-.project-div img{
-    object-fit: cover;
-
 }
 
 #contact{
@@ -384,38 +361,36 @@ transition: background-color 0.5s ease-in-out;
         padding-left: 0;
     
     flex-direction: column;
-    justify-content: center;
-    height: 45vh;
+    justify-content: space-evenly;
     align-items: flex-start;
     margin-bottom: 10%;
     margin-top: 10%;
    
     }
     #profile p{
-        width: 75vw;
-       
+        width: 100%;
+   
+        
     }
  
+ 
 
+    #moses{
+        padding:1.5rem;
+       margin-right: 0.5rem;
+        
+        
+    }
+    
     #saruni{
-        margin-left: 3vw;
+        padding:3rem;
+        margin-left: 0.5rem;
+        
     }
    
      #hobbies{
        width: 100%;
-       position: relative;
-       left: 6.2%;
-       margin-top: 10%;
-       margin-bottom: 10%;
-       height: 55vw;
-       border:none ;
-     }
-
-    
-  
-     .hobbies-visible{
-        width: 100%;
-        position: relative;
+       height: 50%;
      }
 
    
@@ -429,7 +404,7 @@ transition: background-color 0.5s ease-in-out;
         margin-top:10%;
     }
     .project-div{
-        height: 35vh;
+        height: 30vh;
     width: 100%;
    
   

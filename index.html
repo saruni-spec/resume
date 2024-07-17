@@ -45,15 +45,15 @@
    
       
       <p><span id="moses">Moses</span><span id="saruni">Saruni</span></p>
-   
+      <div id="hobbies" class="not-visible">
+        <h2>Design</h2>
+        <h2 id="code">&lt;&nbsp;Code/&nbsp;&gt;</h2>
+          <h2>Develop</h2>
+  
+      </div>
       
     </div>
-    <div id="hobbies" class="not-visible">
-      <h2>Design</h2>
-      <h2 id="code">&lt;&nbsp;Code/&nbsp;&gt;</h2>
-        <h2>Develop</h2>
-
-    </div>
+    
     <div id="projects">
 
     
@@ -225,32 +225,6 @@ if (isMobile()) {
 }
     </script>
 
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const target = document.getElementById("hobbies");
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => { // Iterate over entries
-      if (entry.isIntersecting) {
-        console.log("observing");
-        entry.target.classList.remove("not-visible"); // Use entry.target
-        entry.target.classList.add("hobbies-visible");
-        
-      } else {
-        console.log("observing");
-        entry.target.classList.add("not-visible"); // Use entry.target
-        entry.target.classList.remove("hobbies-visible");
-      }
-    });
-  }, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  });
-
-  observer.observe(target);
-});
-    </script>
    <script>
     document.addEventListener('DOMContentLoaded', () => {
       const targets = document.querySelectorAll('.project-div');
