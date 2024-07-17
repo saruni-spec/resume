@@ -127,24 +127,58 @@ gap: 2rem;
     margin-left: 3rem;
 }
 
-  #hobbies {
+#hobbies {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    line-height: -0.1rem;
-    width: 50%;
-    
-    padding: 2%;
-}
-#hobbies h2{
-    font-size: 3rem;
-    letter-spacing: -70%rem;
+    width: 100%;
+    padding: 5% 10%;
+   
+    overflow: hidden;
+  }
+  
+  #hobbies h2 {
+    font-size: 4rem;
+    line-height: 1;
     margin: 0;
-    padding: 0;
+    padding: 0.5rem 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    position: relative;
     
-}
+  }
+  
+  
+  
+  #hobbies h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1.5rem;
+    height: 2px;
+    background-color: #000;
+    
+  }
+  
+
+  #code {
+    font-family: 'Courier New', monospace;
+    
+  }
+  
+  #hobbies h2:nth-child(odd) {
+    align-self: flex-start;
+  }
+  
+  #hobbies h2:nth-child(even) {
+    align-self: flex-end;
+  }
+  
+  
 #code{
     color: var(--complement-color);
 }
@@ -340,7 +374,7 @@ transition: background-color 0.5s ease-in-out;
  
     
     #title{
-        font-size: 1.4rem;
+        font-size: 1.8rem;
 
     }
 
@@ -349,8 +383,6 @@ transition: background-color 0.5s ease-in-out;
        
     flex-direction: column;
   
-   
-    margin-bottom: 10%;
     margin-top: 15%;
     padding-top: 40%;
    
