@@ -65,7 +65,7 @@ a span:hover {
     width: 90%;
     position: fixed;
     top: 0;
-    left: 1%;
+    left: 0;
     z-index: 1;
     background-color: var(--highlight-color);
 
