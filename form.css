@@ -1,0 +1,71 @@
+#contact-form {
+    padding: 4rem 6rem;
+   
+    color: var(--contrast-color);
+  }
+  
+  #project-inquiry {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+   
+  }
+  
+  #project-inquiry input,
+  #project-inquiry textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    color: var(--contrast-color);
+  }
+  
+  #project-inquiry button {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #project-inquiry button:hover {
+    background-color: var(--highlight-color);
+  }
+
+  .budget-slider {
+    margin-bottom: 1rem;
+  }
+  
+  .budget-slider label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  #budget {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    background: var(--secondary-color);
+    outline: none;
+  }
+  
+  #budget::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+  }
+  
+  #budget::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+  }
+  @media screen and (max-width:800px) {}

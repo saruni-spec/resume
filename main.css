@@ -77,115 +77,146 @@ a span:hover {
     to{scale : 1 1;}
 }
 
-#profile{
-margin-top: 2%;
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-align-items: center;
-height: 100svh;
-width: 100%;
-gap: 2rem;
-
-}
-#profile p{
-    width: 50%;
-    text-align: left;
-    margin: 2rem;
-}
-#moses{
-    padding-top:1.7rem;
-    padding-bottom: 1.7rem;
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-   margin-right: 1.7rem;
-    border: 3px solid var(--accent-color);
-
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
-
-    font-size:xx-large;
-    font-weight: 500;
-    
-}
-
-#saruni{
-    padding-top:3.5rem ;
-    padding-bottom: 3.5rem;
-    padding-left: 7rem;
-    padding-right: 7rem;
-    margin-left: -4rem;
-    border: 3px solid var(--accompany-color);
-
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
-
-    font-size:xx-large;
-    font-weight: 500;
-    transition: margin-left 0.5s ease-in-out;
-    z-index: 1;
-}
-#saruni:hover{
-    margin-left: 3rem;
-}
-
-#hobbies {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    padding: 5% 10%;
-   
-    overflow: hidden;
-  }
-  
-  #hobbies h2 {
-    font-size: 4rem;
-    line-height: 1;
-    margin: 0;
-    padding: 0.5rem 0;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
+.projects-wrapper {
     position: relative;
-    
+    overflow: hidden;
+    width: 100%;
+    height: auto;
   }
   
-  
-  
-  #hobbies h2::before {
+  .projects-wrapper::before,
+  .projects-wrapper::after {
     content: '';
     position: absolute;
+    width: 80vw;
+    height: 800vh;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, var(--contrast-color) 10%, transparent 30%);
+    background-size: 15px 10px;
+    opacity: 0.07;
+    animation: backgroundMove 10s linear infinite;
+    z-index: -1;
+  }
+  
+  .projects-wrapper::after {
+    top: -45%;
+    left: -55%;
+    animation-duration: 90s;
+  }
+  
+  @keyframes backgroundMove {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50px, -50px) rotate(360deg);
+    }
+  }
+  
+
+
+
+
+
+
+.projectTitle {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    
+  }
+  
+  .projectTitle h2 {
+    font-size: 5vw;
+    font-weight: 600;
+   
+  color: var(--contrast-color);
+    
+    letter-spacing: -0.5vw;
+    position: relative;
+    z-index: 2;
+    
+    transition: transform 0.3s ease;
+  }
+  
+  .projectTitle h2::before,
+  .projectTitle h2::after {
+    content: 'Projects';
+    position: absolute;
+    top: 0;
     left: 0;
-    top: 50%;
-    width: 1.5rem;
-    height: 2px;
-    background-color: #000;
-    
+    right: 0;
+    overflow: hidden;
+    background: var(--primary-color);
+    color: var(--contrast-color);
+  }
+  .projectTitle h2::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--accent-color);
+    animation: glitch-1 2s infinite linear alternate-reverse;
   }
   
-
-  #code {
-    font-family: 'Courier New', monospace;
-    
+  .projectTitle h2::after {
+    left: -2px;
+    text-shadow: 1px 0 var(--accompany-color);
+    animation: glitch-2 3s infinite linear alternate-reverse;
   }
   
-  #hobbies h2:nth-child(odd) {
-    align-self: flex-start;
+  @keyframes glitch-1 {
+    0%, 100% { clip-path: inset(50% 0 30% 0); }
+    20% { clip-path: inset(33% 0 66% 0); }
+    40% { clip-path: inset(10% 0 61% 0); }
+    60% { clip-path: inset(83% 0 5% 0); }
+    80% { clip-path: inset(92% 0 3% 0); }
   }
   
-  #hobbies h2:nth-child(even) {
-    align-self: flex-end;
+  @keyframes glitch-2 {
+    0%, 100% { clip-path: inset(25% 0 58% 0); }
+    20% { clip-path: inset(75% 0 5% 0); }
+    40% { clip-path: inset(46% 0 14% 0); }
+    60% { clip-path: inset(72% 0 19% 0); }
+    80% { clip-path: inset(15% 0 94% 0); }
+  }
+  
+  /* Add this to create a subtle shake effect */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-1px); }
+    20%, 40%, 60%, 80% { transform: translateX(1px); }
+  }
+  
+  .projectTitle h2 {
+    /* ... existing styles ... */
+    animation: shake 0.5s infinite;
+    animation-timing-function: steps(2, end);
+  }
+  .projectTitle::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
+  
+  .projectTitle::after {
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
+  
+  /* Add a subtle interactive element */
+  .projectTitle .interactive-element {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    transition: transform 0.2s ease;
   }
   
   
-#code{
-    color: var(--complement-color);
-}
-
-
-
-
 #projects{
     display: flex;
     flex-direction: column;
@@ -215,8 +246,8 @@ gap: 2rem;
    
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:flex-start;
+    justify-content:flex-start;
+   
     margin: 1rem;
     color: var(--contrast-color);
 }
@@ -258,6 +289,8 @@ gap: 2rem;
     opacity: 1;
  
   
+    transform: translateY(-15px) scale(1.1);
+    transition: transform 300ms;
   }
   
 
@@ -269,107 +302,25 @@ gap: 2rem;
     padding-left: 12px;
     padding-right: 12px;
     border-radius: 4px;
-    transition: background-color 0.5s ease-in-out,transform 800ms,opacity 0.3s ease;
+    transition:transform 800ms,opacity 0.3s ease;
    
     
 }
 .project-link:hover{
-    background-color:var(--primary-color) ;
-    transform: translateY(-7px) scale(1.1);
-    transition: transform 300ms;
+    opacity: 2;
+    
 }
 
-#contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    height: 40svh;
-    width: 100%;
-   padding-bottom: 3%;
-   
+.parallax-project {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease-out;
+  }
+  
+  .project-image {
+    transition: transform 0.2s ease-out;
+  }
  
-}
-.contact-list{
-    display: flex;
-    flex-direction: row;
-    
-    align-items: center;
-    gap: 2rem;
-
-}
-#contact h2{
-    width: 30%;
-    height: 90%;
-    
-  
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#contact h2:hover {
-  
-    color: var(--highlight-color);
-    border-radius: 10px;
-}
-
-#contact h2:hover span {
-    animation: winkAnimation 0.5s ease;
-    animation: hoverEffect 1s infinite;
-    animation: throwEffect 0.1s infinite;
-}
-
-
-@keyframes winkAnimation {
-    0% { transform: scaleY(1); }
-    50% { transform: scaleY(0.1); }
-    100% { transform: scaleY(1); }
-}
-
-.icon {
-    margin: 2rem;
-    color: var(--contrast-color);
-   
-   
-  }
-  
-  .icon:hover {
-    animation: throwEffect 0.1s infinite;
-    
-    color: var(--complement-color);
-
-  }
-  @keyframes throwEffect {
-    0% { transform: rotate(0deg) translateX(-4px) translateX(-4px) scale(0.5); }
-    25% { transform: rotate(90deg) translateX(-8px) translateX(-8px) scale(1); }
-    50% { transform: rotate(180deg) translateX(-12px) translateX(-12px) scale(1.5); }
-    75% { transform: rotate(270deg) translateX(-8px) translateX(-8px) scale(1); }
-    100% { transform: rotate(360deg) translateX(-4px) translateX(-4px) scale(0.5); }
-  }
-  
-
-.span1{
-    padding-top: 2px;
-    padding-bottom: 2px;
-transition: background-color 0.5s ease-in-out;
-}
-.span2{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    transition: background-color 0.5s ease-in-out;
-}
-.span1:hover{
-    background-color: var(--accent-color) ;
-}
-.span2:hover{
-    background-color: var(--accompany-color);
-}
-
-
-
-
 @media screen and (max-width:800px) {
  
     
@@ -378,44 +329,10 @@ transition: background-color 0.5s ease-in-out;
 
     }
 
-    #profile{
-        padding-left: 0;
-       
-    flex-direction: column;
-  
-    margin-top: 15%;
-    padding-top: 40%;
-   
-    }
-    #profile p{
-        width: 100%;
-        padding-left: 1rem;
-   
-        
-    }
- 
- 
-
-    #moses{
-        padding:1.5rem;
-       margin-right: 0.5rem;
-        
-        
-    }
     
-    #saruni{
-        padding:3rem;
-        margin-left: 0.5rem;
-        
-    }
-   
-     #hobbies{
-        margin-top: 35%;
-       width: 100%;
-       
-     }
-
-   
+    .projectTitle h2 {
+        font-size: 12vw;
+      }
     
     #projects{
         display: flex;
@@ -462,24 +379,7 @@ transition: background-color 0.5s ease-in-out;
     }
    
     
-    #contact{
-        
-        width: 100%;
-       
-        height: 40vh;
-        flex-direction: column;
-        justify-content: center;
-     
-    }
-    #contact h2{
-        width: 100%;
-        height: 20%;
-        text-align: center;
-    }
-    #contact img{
-        width: 4rem;
-        height: 4rem;
-    }
+   
     
-    
+      
 }

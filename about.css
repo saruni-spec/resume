@@ -1,0 +1,23 @@
+#about-me {
+    padding: 4rem 2rem;
+    color: var(--contrast-color);
+  }
+  
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .personal, .professional {
+    flex: 1;
+  }
+  
+  .personal h3, .professional h3 {
+    color: var(--accent-color);
+  }
+  @media screen and (max-width:800px) {
+    .about-content {
+        flex-direction: column;
+      }
+  }

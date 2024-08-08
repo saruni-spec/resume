@@ -1,0 +1,142 @@
+#profile{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100svh;
+    width: 100%;
+    gap: 2rem;
+    
+    }
+    #profile p{
+        width: 50%;
+        text-align: left;
+        margin: 2rem;
+    }
+    #moses{
+        padding-top:1.7rem;
+        padding-bottom: 1.7rem;
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+       margin-right: 1.7rem;
+        border: 3px solid var(--accent-color);
+    
+        cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
+    
+        font-size:xx-large;
+        font-weight: 500;
+        
+    }
+    
+    #saruni{
+        padding-top:3.5rem ;
+        padding-bottom: 3.5rem;
+        padding-left: 7rem;
+        padding-right: 7rem;
+        margin-left: -4rem;
+        border: 3px solid var(--accompany-color);
+    
+        cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
+    
+        font-size:xx-large;
+        font-weight: 500;
+        transition: margin-left 0.5s ease-in-out;
+        z-index: 1;
+    }
+    #saruni:hover{
+        margin-left: 3rem;
+    }
+
+    #hobbies {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        padding: 5% 10%;
+       
+        overflow: hidden;
+      }
+      
+      #hobbies h2 {
+        font-size: 4rem;
+        line-height: 1;
+        margin: 0;
+        padding: 0.5rem 0;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+        position: relative;
+        
+      }
+      
+      
+      
+      #hobbies h2::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 1.5rem;
+        height: 2px;
+        background-color: #000;
+        
+      }
+      #code {
+        font-family: 'Courier New', monospace;
+        
+      }
+      
+      #hobbies h2:nth-child(odd) {
+        align-self: flex-start;
+      }
+      
+      #hobbies h2:nth-child(even) {
+        align-self: flex-end;
+      }
+      
+      
+    #code{
+        color: var(--complement-color);
+    }
+    @media screen and (max-width:800px) {
+        #profile{
+            padding-left: 0;
+           
+        flex-direction: column;
+      
+        margin-top: 15%;
+        padding-top: 40%;
+       
+        }
+        #profile p{
+            width: 100%;
+            padding-left: 1rem;
+       
+            
+        }
+     
+     
+    
+        #moses{
+            padding:1.5rem;
+           margin-right: 0.5rem;
+            
+            
+        }
+        
+        #saruni{
+            padding:3rem;
+            margin-left: 0.5rem;
+            
+        }
+       
+         #hobbies{
+            margin-top: 35%;
+           width: 100%;
+           
+         }
+    
+    }

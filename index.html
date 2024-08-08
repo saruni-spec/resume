@@ -16,12 +16,16 @@
     <meta name="twitter:description" content="A portfolio for Saruni showcasing various projects." />
     <link rel="stylesheet"  href="style.css" />
     <link rel="stylesheet"  href="main.css" />
-    <link rel="icon" href="/public/icon.png">
+    <link rel="stylesheet"  href="form.css" />
+    <link rel="stylesheet"  href="profile.css" />
+    <link rel="stylesheet"  href="about.css" />
+    <link rel="stylesheet"  href="contact.css" />
+    <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+    <link rel="preconnect" href="https://cdn.emailjs.com">
     <title>Saruni Portfolio</title>
   </head>
-  <body>
+  <body class="allForOne">
   
     <ul id="nav">
       <li id="title"><a href="#profile">
@@ -36,7 +40,7 @@
      
       <li><a href="#projects">Projects</a></li>
      
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact-form">Contact</a></li>
     </ul>
 
     <div id="scroll-watcher"></div>
@@ -51,19 +55,42 @@
         <h2 class="slide-in">Develop</h2>
       </div>
     </div>
+    <div id="about-me">
+      <div class="about-content">
+        <div class="personal">
+          <h3>Personal</h3>
+          <p>Not coding? reading,writing,drawing or rather doodling and occassionally,daydreaming.<br/> I like trying my hand at new skills .Key-word "like".So please dont ask what...</p>
+        </div>
+        <div class="professional">
+          <h3>Professional</h3>
+          <p>I specialize in creating responsive, user-friendly websites and applications</p>
+          <ul>
+            <li>Front-end: HTML, CSS, JavaScript, React</li>
+            <li>Back-end: Node.js, Python, Django</li>
+            <li>Database: MySQL, Postgres, Firebase </li>
+            <li> Git, AWS, Agile methodologies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+   
+    <div class="projects-wrapper">
+    
+
+      <div class="projectTitle"><h2>Projects</h2></div>
     
     <div id="projects">
 
     
      
-      <div class="project-div">
+      <div class="project-div parallax-project">
         <div class="project-details">
         <h2>Nuria</h2>
         <p>E-Commerce</p>
         </div>
       <div  class="project-image" style="background-image: url('/nuria.png');">
 
-        <a href="https://nuria.web.app/" class="project-link">
+        <a href="https://nuria.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
           Visit Site
         </a>
       </div>
@@ -72,9 +99,9 @@
       </div>
 
 
-      <div class="project-div" >
+      <div class="project-div parallax-project" >
         <div class="project-image" style="background-image: url('/fool.png');">
-          <a href="https://wisefool.pythonanywhere.com/article/the-fool" class="project-link">
+          <a href="https://wisefool.pythonanywhere.com/article/the-fool" target="_blank" rel="noopener noreferrer" class="project-link">
             Visit Site
           </a>
         </div>
@@ -90,13 +117,13 @@
        </div>
 
 
-      <div class="project-div" >
+      <div class="project-div parallax-project" >
         <div class="project-details">
         <h2>Brian Technologies</h2>
         <p>Catalog</p>
         </div>
       <div class="project-image" style="background-image: url('/brian.png');">
-        <a href="https://briantech.web.app/" class="project-link">
+        <a href="https://briantech.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
           Visit Site
         </a>
       </div>
@@ -105,9 +132,9 @@
       </div>
 
       
-      <div class="project-div" >
+      <div class="project-div parallax-project" >
         <div class="project-image" style="background-image: url('/kickoff.png');">
-          <a href="https://kickoff-challenge-football.web.app/" class="project-link">
+          <a href="https://kickoff-challenge-football.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
             Visit Site
           </a>
         </div>
@@ -121,24 +148,152 @@
       </div>
 
   </div>
-
-
-
-    <div id="contact">
-      <h2>Contact Me <span> &nbsp;;)</span></h2>
-<div class="contact-list">
-  <div class="icon">
-      <a  href="mailto:smithsaruni16@gmail.com" target="_blank" rel="noopener noreferrer"><img src="/images.jpeg" alt="Email"/>
-       
-</a>
 </div>
-<div class="icon">
-      <a class="icon" href="https://www.linkedin.com/in/moses-saruni-ba6653234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="/Untitled.png" alt="Linked In"/></imh></a>
-    </div> 
-    </div>
-      
-    </div>
 
+ <div id="contact-form">
+  <h2>Let's Work Together</h2>
+  <p>Interested in collaborating? Fill out the form below, and I'll get back to you soon!</p>
+  <form id="project-inquiry" onsubmit="sendForm(event)">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="project_details" placeholder="Tell me about your project" required></textarea>
+   
+    <button type="submit">Send Inquiry</button>
+  </form>
+</div>
+  
+ 
+  <div id="contact">
+    <h2>Let's Connect </h2>
+    <div class="contact-list">
+      <a href="mailto:smithsaruni16@gmail.com" class="contact-item" target="_blank" rel="noopener noreferrer" >
+        <i class="fas fa-envelope"></i>
+        <span>Email</span>
+      </a>
+      <a href="https://www.linkedin.com/in/moses-saruni-ba6653234" class="contact-item" target="_blank" rel="noopener noreferrer" >
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/saruni-spec/" class="contact-item" target="_blank" rel="noopener noreferrer" >
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+     
+    </div>
+  </div>
+  <script>
+    const canvas = document.createElement('canvas');
+document.body.appendChild(canvas);
+canvas.style.position = 'fixed';
+canvas.style.top = '0';
+canvas.style.left = '0';
+canvas.style.width = '100vw';
+canvas.style.height = '100vh';
+canvas.style.zIndex = '-1';
+
+const ctx = canvas.getContext('2d');
+
+function animate() {
+  // Add animation logic here
+  requestAnimationFrame(animate);
+}
+
+animate();
+  </script>
+
+  
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const projects = document.querySelectorAll('.parallax-project');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+
+    projects.forEach((project) => {
+      const projectTop = project.getBoundingClientRect().top;
+      const projectBottom = project.getBoundingClientRect().bottom;
+      const windowHeight = window.innerHeight;
+
+      // Check if the project is in the viewport
+      if (projectTop < windowHeight && projectBottom > 0) {
+        const scrollPercentage = (windowHeight - projectTop) / windowHeight;
+        const moveAmount = scrollPercentage * -300; // Adjust this value to control the parallax intensity
+
+        project.style.transform = `translateY(${moveAmount}px)`;
+        
+        // Move the project image in the opposite direction for added depth
+        const projectImage = project.querySelector('.project-image');
+        if (projectImage) {
+          projectImage.style.transform = `translateY(-${moveAmount * 0.5}px)`;
+        }
+      }
+    });
+  });
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const projectTitle = document.querySelector('.projectTitle');
+  
+  function createInteractiveElement(x, y) {
+    const element = document.createElement('div');
+    element.classList.add('interactive-element');
+    element.style.left = `${x}px`;
+    element.style.top = `${y}px`;
+    projectTitle.appendChild(element);
+    
+    setTimeout(() => {
+      element.style.transform = `scale(${20 + Math.random() * 30})`;
+      element.style.opacity = '0';
+    }, 50);
+
+    setTimeout(() => element.remove(), 1000);
+  }
+
+  projectTitle.addEventListener('mousemove', (e) => {
+    const rect = projectTitle.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    createInteractiveElement(x, y);
+  });
+});
+</script>
+ 
+  <script>
+    const cursor = document.createElement('div');
+cursor.className = 'cursor-trail';
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
+  createParticle(e.pageX, e.pageY);
+});
+
+function createParticle(x, y) {
+  const particle = document.createElement('div');
+  particle.className = 'particle';
+  particle.style.left = x + 'px';
+  particle.style.top = y + 'px';
+  document.body.appendChild(particle);
+  setTimeout(() => particle.remove(), 1000);
+}
+  </script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+   <script type="module">
+    import sendEmail from './email.js';
+    function sendForm(event) {
+      event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+  sendEmail(data);
+
+  
+    }
+
+    window.sendForm= sendForm;
+   </script>
 
     <script>
    var profileElement = document.getElementById("saruni");
