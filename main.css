@@ -345,7 +345,7 @@ a span:hover {
     }
     .project-div{
         height: 30vh;
-    width: 90%;
+    width: 95%;
    
   
     justify-content: center;
@@ -355,17 +355,15 @@ a span:hover {
     }
     .project-link {
     
-    padding: 20%;
-    background-color: transparent;
+   
+
         opacity: 1;
-        z-index: 1;
-        color: transparent;
+        z-index:5;
+        
+        transform: translateY(4rem) translateX(7rem);
+        
        
       }
-      .project-link:hover{
-        background-color:transparent;
-     
-    }
       
     .project-details{
         display: none;
