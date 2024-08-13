@@ -60,22 +60,27 @@ a span:hover {
     100% { background-color: red; }
   }
 
-#scroll-watcher{
+  #scroll-watcher {
     height: 10px;
-    width: 90%;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
     background-color: var(--highlight-color);
-
+    transform-origin: left; /* Ensure scaling happens from the left */
+    
     scale: 0 1;
     animation: scroll-watcher linear;
     animation-timeline: scroll(y);
 }
-@keyframes scroll-watcher{
-    to{scale : 1 1;}
+
+@keyframes scroll-watcher {
+    to {
+        scale: 1 1;
+    }
 }
+
 
 .projects-wrapper {
     position: relative;
