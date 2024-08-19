@@ -58,19 +58,23 @@
     <div id="about-me">
       <div class="about-content">
         <div class="personal">
-          <h3>Personal</h3>
-          <p>Reading,writing,drawing or rather doodling and occassionally,daydreaming.</p>
+  
+          
         
-          <p>"Master of Creative Visualization with over a decade of experience in strategic daydreaming, consistently generating innovative ideas and mental simulations that push the boundaries of imagination."</p>
+          <p>I love problems,so share yours with me</p><p>Don't hold back</p>
+          <p>I'll listen,and if I can,help analyze the problem</p>
+          <p>We'll find a solution,together...</p>
+<p></p>
+          <p>I also love reading,writing,drawing or rather doodling and occassionally,daydreaming.</p>
         </div>
         <div class="professional">
-          <h3>Professional</h3>
+         
           <p>I specialize in creating responsive, user-friendly websites and applications</p>
           <ul>
             <li>Front-end: HTML, CSS, JavaScript, React</li>
             <li>Back-end: Node.js, Python, Django</li>
             <li>Database: MySQL, Postgres, Firebase </li>
-            <li>Git, AWS, Agile methodologies</li>
+            <li>Git, AWS, Vercel </li>
           </ul>
         </div>
       </div>
@@ -297,89 +301,7 @@ function createParticle(x, y) {
     window.sendForm= sendForm;
    </script>
 
-    <script>
-   var profileElement = document.getElementById("saruni");
-var codeElement = document.getElementById("code");
-var textToType = "Hello Visitor ";
-var originalText = "<code/>";
-var newText = "Interested..? Contact Me";
-var index = 0;
-var isTyping = false;
-var typingInterval, backspacingInterval;
-
-function typeEffect(text, nextAction) {
-    if (index < text.length) {
-        codeElement.textContent += text.charAt(index);
-        index++;
-        typingInterval = setTimeout(() => typeEffect(text, nextAction), 100);
-    } else {
-        isTyping = false;
-        index = 0;
-        if (nextAction) {
-            setTimeout(nextAction, 1000);
-        }
-    }
-}
-
-function backspaceEffect(nextAction) {
-    if (codeElement.textContent.length > 0) {
-        codeElement.textContent = codeElement.textContent.slice(0, -1);
-        backspacingInterval = setTimeout(() => backspaceEffect(nextAction), 50);
-    } else {
-        clearTimeout(backspacingInterval);
-        if (nextAction) {
-            nextAction();
-        }
-    }
-}
-
-function startTypeEffect() {
-    if (!isTyping) {
-        isTyping = true;
-        index = 0;
-        codeElement.textContent = '';
-        clearTimeout(typingInterval);
-        clearTimeout(backspacingInterval);
-        typeEffect(textToType);
-    }
-}
-
-function startBackspaceEffect() {
-    clearTimeout(typingInterval);
-    backspaceEffect(() => {
-        typeEffect(newText, () => {
-            backspaceEffect(() => {
-                typeEffect(originalText);
-            });
-        });
-    });
-}
-
-// Check if it's a mobile device
-function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-if (isMobile()) {
-    // Use Intersection Observer for mobile
-    var observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startTypeEffect();
-            } else {
-                startBackspaceEffect();
-            }
-        });
-    }, { threshold: 0.5 }); // Adjust threshold as needed
-
-    observer.observe(profileElement);
-} else {
-    // Use mouse events for desktop
-    profileElement.addEventListener("mouseover", startTypeEffect);
-    profileElement.addEventListener("mouseout", startBackspaceEffect);
-}
-    </script>
-
+    
    <script>
     document.addEventListener('DOMContentLoaded', () => {
       const targets = document.querySelectorAll('.project-div');
