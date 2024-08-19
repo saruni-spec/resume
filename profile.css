@@ -158,13 +158,13 @@
         }
         #profile p{
             width: 100%;
-            padding-left: 1rem;
-       
+           
+       margin: 0.5rem 0;
             
         }
         #hobbies{
           margin-top: 10%;
-          padding: auto 2%;
+          padding: auto 0;
         }
      
        

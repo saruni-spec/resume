@@ -59,7 +59,7 @@ a span:hover {
     z-index: 1;
     background-color: var(--highlight-color);
     transform-origin: left; /* Ensure scaling happens from the left */
-    
+    z-index: 9;
     scale: 0 1;
     animation: scroll-watcher linear;
     animation-timeline: scroll(y);
