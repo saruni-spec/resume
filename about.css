@@ -12,7 +12,11 @@
   .personal, .professional {
     flex: 1;
   }
-  
+  .professional{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .personal h3, .professional h3 {
     color: var(--accent-color);
   }

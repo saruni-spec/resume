@@ -22,6 +22,7 @@
     <link rel="stylesheet"  href="contact.css" />
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <link rel="preconnect" href="https://cdn.emailjs.com">
     <title>Saruni Portfolio</title>
   </head>
@@ -38,44 +39,51 @@
         <span>i</span>
       </a></li>
      
-      <li><a href="#my_projects">Projects</a></li>
+      <li class="navLink"><a href="#my_projects">Projects</a></li>
      
-      <li><a href="#contact-form">Contact</a></li>
+      <li class="navLink"><a href="#contact-form">Contact</a></li>
     </ul>
 
     <div id="scroll-watcher"></div>
    
     <div id="profile">
-   
-      
-      <p><span id="moses">Moses</span><span id="saruni">Saruni</span></p>
+      <p class="name"><span id="moses" class="console-text">Moses</span><span id="saruni" class="console-text">Saruni</span></p>
       <div id="hobbies" class="not-visible">
-        <h2 class="slide-in">Design</h2>
-        <h2 id="code" class="slide-in">&lt;&nbsp;Code/&nbsp;&gt;</h2>
-        <h2 class="slide-in">Develop</h2>
+        <div id="terminal">
+        
+          <p class="console-text">> What do I do?</p>
+          <div  >
+          <p class="console-text hobby-item" data-text="Design">_</p>
+          <p class="console-text hobby-item" data-text="<Code/>">_</p>
+          <p class="console-text hobby-item" data-text="Develop">_</p>
+        </div>
+        </div>
       </div>
     </div>
     <div id="about-me">
       <div class="about-content">
         <div class="personal">
-  
-          
-        
-          <p>I love problems,so share yours with me</p><p>Don't hold back</p>
-          <p>I'll listen,and if I can,help analyze the problem</p>
-          <p>We'll find a solution,together...</p>
-<p></p>
-          <p>I also love reading,writing,drawing or rather doodling and occassionally,daydreaming.</p>
+          <p class="console-text">I love problems, so share yours with me</p>
+         
+          <p class="console-text">I'll listen, and if I can, help analyze the problem</p>
+          <p class="console-text">We'll find a solution, together...</p>
+          <p class="console-text">I also love reading, writing, drawing or rather doodling and occasionally, daydreaming.</p>
         </div>
         <div class="professional">
-         
-          <p>I specialize in creating responsive, user-friendly websites and applications</p>
-          <ul>
-            <li>Front-end: HTML, CSS, JavaScript, React</li>
-            <li>Back-end: Node.js, Python, Django</li>
-            <li>Database: MySQL, Postgres, Firebase </li>
-            <li>Git, AWS, Vercel </li>
-          </ul>
+          <p class="console-text">Tech Stack</p>
+          <div class="skill-icons">
+            <i class="floatIcon fab fa-html5" title="HTML5"></i>
+            <i class="floatIcon fab fa-css3-alt" title="CSS3"></i>
+            <i class="floatIcon fab fa-js-square" title="JavaScript"></i>
+            <i class="floatIcon fab fa-react" title="React"></i>
+            <i class="floatIcon fab fa-node-js" title="Node.js"></i>
+            <i class="floatIcon fab fa-python" title="Python"></i>
+            <i class="floatIcon fab fa-django" title="Django"></i>
+            <i class="floatIcon fas fa-database" title="Databases"></i>
+            <i class="floatIcon fab fa-git-alt" title="Git"></i>
+            <i class="floatIcon fab fa-aws" title="AWS"></i>
+            <i class="floatIcon fab fa-vuejs" title="Vercel"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -109,16 +117,16 @@
 
 
       <div class="project-div parallax-project" >
-        <div class="project-details">
-        <h2>Brian Technologies</h2>
-        <p>Catalog</p>
-        </div>
+       
       <div class="project-image" style="background-image: url('/brian.png');">
         <a href="https://briantech.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
           Visit Site
         </a>
       </div>
-          
+      <div class="project-details">
+        <h2>Brian Technologies</h2>
+        <p>Catalog</p>
+        </div>
       
       </div>
       <div class="project-div parallax-project" >
@@ -139,15 +147,16 @@
        </div>
       
       <div class="project-div parallax-project" >
+        <div class="project-details">
+          <h2>Kick Off Challenge</h2>
+          <p>Sports Entertainment</p>
+          </div>
         <div class="project-image" style="background-image: url('/kickoff.png');">
           <a href="https://kickoff-challenge-football.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
             Visit Site
           </a>
         </div>
-        <div class="project-details">
-        <h2>Kick Off Challenge</h2>
-        <p>Sports Entertainment</p>
-        </div>
+       
         
           
       
@@ -282,7 +291,7 @@ function createParticle(x, y) {
   particle.style.left = x + 'px';
   particle.style.top = y + 'px';
   document.body.appendChild(particle);
-  setTimeout(() => particle.remove(), 1000);
+  setTimeout(() => particle.remove(), 300);
 }
   </script>
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -301,7 +310,18 @@ function createParticle(x, y) {
     window.sendForm= sendForm;
    </script>
 
-    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+  const hobbyItems = document.querySelectorAll('.hobby-item');
+
+  hobbyItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.textContent = item.dataset.text;
+      item.style.animation = 'typing 2s steps(20, end) forwards';
+    }, index * 2000);
+  });
+});
+    </script>
    <script>
     document.addEventListener('DOMContentLoaded', () => {
       const targets = document.querySelectorAll('.project-div');

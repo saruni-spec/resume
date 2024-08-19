@@ -14,12 +14,18 @@
     z-index: 10;
    
 }
-#nav:hover{
-    border-bottom: 1px solid var(--contrast-color);
-}
+
 #nav li{
     margin-right: 2%;
-    
+  
+}
+.navLink{
+  padding: 5px 8px;
+}
+
+.navLink:hover{
+  
+  background-color: black;
 }
 
 #title{
@@ -31,10 +37,7 @@
    margin-right: auto;
    width: 30%;
 }
-#nav a:hover{
-    animation: hoverEffect 1s infinite;
 
-}
 
 a span{
     padding: 1%;
@@ -43,23 +46,9 @@ a span{
 
 a span:hover {
     
-    animation: hoverEffect 1s infinite, backgroundEffect 1s infinite;
+    background-color: black;
   }
   
-  @keyframes hoverEffect {
-    0% { color: red; }
-    25% { color: orange; }
-    50% { color: yellow; }
-    75% { color: green; }
-    100% { color: blue; }
-  }
-  @keyframes backgroundEffect {
-    0% { background-color: blue; }
-    25% { background-color: green; }
-    50% { background-color: yellow; }
-    75% { background-color: orange; }
-    100% { background-color: red; }
-  }
 
   #scroll-watcher {
     height: 10px;
@@ -141,8 +130,10 @@ a span:hover {
   .projectTitle h2 {
     font-size: 5vw;
     font-weight: 600;
-   
-  color: var(--contrast-color);
+    font-family: 'Courier New', monospace;
+
+    text-shadow: 0 0 5px var(--highlight-color);
+
     
     letter-spacing: -0.5vw;
     position: relative;

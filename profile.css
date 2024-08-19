@@ -1,51 +1,47 @@
 #profile{
     margin-top: 2%;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 100svh;
     width: 100%;
     gap: 2rem;
     
     }
-    #profile p{
-        width: 50%;
-        text-align: left;
-        margin: 2rem;
+    .name{
+      width: 100%;
+      text-align: center;
     }
-    #moses{
-        padding-top:1.7rem;
-        padding-bottom: 1.7rem;
-        padding-left: 3.5rem;
-        padding-right: 3.5rem;
-       margin-right: 1.7rem;
-        border: 3px solid var(--accent-color);
-    
-        cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
-    
-        font-size:xx-large;
-        font-weight: 500;
-        
+    #profile p {
+  
+      
+      margin: 0.5rem 2rem;
     }
     
-    #saruni{
-        padding-top:3.5rem ;
-        padding-bottom: 3.5rem;
-        padding-left: 7rem;
-        padding-right: 7rem;
-        margin-left: -4rem;
-        border: 3px solid var(--accompany-color);
-    
-        cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur230.cur), auto !important;
-    
-        font-size:xx-large;
-        font-weight: 500;
-        transition: margin-left 0.5s ease-in-out;
-        z-index: 1;
+    #moses, #saruni {
+      font-family: 'Courier New', monospace;
+      color: var(--highlight-color);
+      text-shadow: 0 0 5px var(--complement-color);
+      background-color: #000;
+      border: 2px solid var(--complement-color);
+      padding: 1rem 2rem;
+      font-size: xx-large;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    #saruni:hover{
-        margin-left: 3rem;
+    
+    #moses:hover, #saruni:hover {
+      background-color: var(--complement-color);
+      color: var(--primary-color);
+      text-shadow: none;
+    }
+    #terminal{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     #hobbies {
@@ -101,14 +97,63 @@
     #code{
         color: var(--complement-color);
     }
+
+    .hobby-item {
+      position: relative;
+      margin: 0.5rem 0;
+      padding-left: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 3s steps(20, end) forwards;
+    }
+    
+    .hobby-item::before {
+      content: '> ';
+    }
+    
+    .hobby-item::after {
+      content: '_';
+      position: absolute;
+      right: 0;
+      animation: blink 0.7s infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blink {
+      50% { opacity: 0 }
+    }
+    
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    .floatIcon {
+      /* ... existing styles ... */
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .floatIcon:nth-child(2n) {
+      animation-delay: 0.5s;
+    }
+    
+    .floatIcon:nth-child(3n) {
+      animation-delay: 1s;
+    }
+   
     @media screen and (max-width:800px) {
         #profile{
             padding-left: 0;
            
         flex-direction: column;
       
-        margin-top: 15%;
-        padding-top: 40%;
+    
+    
        
         }
         #profile p{
@@ -117,26 +162,12 @@
        
             
         }
-     
-     
-    
-        #moses{
-            padding:1.5rem;
-           margin-right: 0.5rem;
-            
-            
+        #hobbies{
+          margin-top: 10%;
+          padding: auto 2%;
         }
-        
-        #saruni{
-            padding:3rem;
-            margin-left: 0.5rem;
-            
-        }
+     
        
-         #hobbies{
-            margin-top: 35%;
-           width: 100%;
-           
-         }
+      
     
     }

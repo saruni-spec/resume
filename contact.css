@@ -44,7 +44,7 @@
   
   .contact-item:hover {
     transform: translateY(-5px);
-    color: var(--accent-color);
+    color: var(--highlight-color);
   }
   
   .contact-item i {
@@ -62,7 +62,7 @@
   .icon:hover {
     animation: throwEffect 0.1s infinite;
     
-    color: var(--complement-color);
+    color: var(--highlight-color);
 
   }
   @keyframes throwEffect {

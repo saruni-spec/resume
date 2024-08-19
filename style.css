@@ -7,16 +7,17 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(8, 8, 8, 0.87);
-  background-color: #e7e5e5;
-  --secondary-color: #E6E6FA;
-  --tertiary-color: aliceblue;
-  --accent-color: rgb(80, 37, 233);
-  --primary-color: #fdfafa;
-  --accompany-color: rgb(248, 33, 33);
-  --contrast-color:rgb(12, 0, 0);
-  --complement-color: rgb(167, 161, 161);
-  --highlight-color:coral;
+  color: rgba(245, 245, 245, 0.87); /* Light text color for dark background */
+background-color: #1a1a1a; /* Dark background color */
+--secondary-color: rgba(170, 170, 170, 0.281); /* Muted secondary color */
+--tertiary-color: #2c3e50; /* Darker shade for tertiary color */
+--accent-color: rgb(80, 37, 233); /* Keeping the same accent color for consistency */
+--primary-color: #1a1a1a; /* Same as background color */
+--accompany-color: rgb(248, 33, 33); /* Keeping the same accompany color */
+--contrast-color: white; /* Light contrast color for dark theme */
+--complement-color: rgb(88, 88, 88); /* Darker shade for complement color */
+--highlight-color: coral; /* Keeping the same highlight color for consistency */
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,7 +27,7 @@
 
 body {
  
-  font-family: 'Lato', sans-serif;
+  font-family: 'Courier New', monospace;
   
   margin: 0;
   padding: 2px;
@@ -50,8 +51,19 @@ h1, h2, h3, h4, h5, h6 {
 a{
   color:var(--highlight-color);
   font-weight: 600;
+  text-shadow: 0 0 5px var(--highlight-color);
   text-decoration: none;
   cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur106.cur), auto;
+}
+input, textarea, button {
+  background-color: #000;
+  border: 1px solid var(--highlight-color);
+  color: var(--highlight-color);
+
+}
+button:hover {
+  background-color: var(--highlight-color);
+  color: #000;
 }
 
 .cursor-trail {
@@ -74,23 +86,43 @@ a{
 }
 
 
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
 
+.skill-icons i {
+  font-size: 3rem;
+  color: var(--highlight-color);
+  transition: transform 0.3s ease;
+}
+
+.skill-icons i:hover {
+  transform: scale(1.2);
+}
+.console-text,.project-details p,.project-details h2{
+  font-family: 'Courier New', monospace;
+
+  text-shadow: 0 0 5px var(--highlight-color);
+ 
+
+
+  display: inline-block;
+}
+.console-text{
+  padding: 10px;
+  border-radius: 5px;
+
+}
 
 
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: rgba(245, 245, 245, 0.87); /* Light text color for dark background */
-background-color: #1a1a1a; /* Dark background color */
---secondary-color: rgba(170, 170, 170, 0.281); /* Muted secondary color */
---tertiary-color: #2c3e50; /* Darker shade for tertiary color */
---accent-color: rgb(80, 37, 233); /* Keeping the same accent color for consistency */
---primary-color: #1a1a1a; /* Same as background color */
---accompany-color: rgb(248, 33, 33); /* Keeping the same accompany color */
---contrast-color: white; /* Light contrast color for dark theme */
---complement-color: rgb(88, 88, 88); /* Darker shade for complement color */
---highlight-color: coral; /* Keeping the same highlight color for consistency */
-
+   
   }
   
 }
