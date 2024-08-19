@@ -11,6 +11,7 @@
     cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur106.cur), auto !important;
     border-bottom: none;
     transition: border-bottom 0.5s ease-in-out;
+    z-index: 10;
    
 }
 #nav:hover{
