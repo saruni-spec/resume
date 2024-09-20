@@ -357,7 +357,7 @@ a span:hover {
         opacity: 1;
         z-index:5;
         
-        transform: translateY(4rem) translateX(7rem);
+        transform: translateY(5rem) translateX(7rem);
         
        
       }
