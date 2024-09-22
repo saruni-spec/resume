@@ -53,7 +53,7 @@ a{
   font-weight: 600;
   text-shadow: 0 0 5px var(--highlight-color);
   text-decoration: none;
-  cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur106.cur), auto;
+  cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur106.cur), pointer;
 }
 input, textarea, button {
   background-color: #000;

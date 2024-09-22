@@ -229,17 +229,13 @@ a span:hover {
     align-items: center;
     justify-content: center;
     padding: 3vh;
-    opacity: 0; /* Initial state: hidden */
+   
     transform: translateY(50px); /* Initial state: moved down */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
     z-index: 3;
   }
   
-  .project-div.visible {
-    opacity: 1; /* Final state: visible */
-    transform: translateY(0); /* Final state: original position */
-  }
-  
+ 
 .project-details{
    
     display: flex;
