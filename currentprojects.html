@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Projects - Saruni Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="currentprojects.css">
+    <link rel="stylesheet" href="footer.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="allForOne">
+    <ul id="nav">
+        <li id="title"><a href="index.html">Saruni</a></li>
+    
+        <li class="navLink"><a href="index.html#my_projects">Projects</a></li>
+        <li class="navLink"><a href="index.html#contact-form">Contact</a></li>
+        <li class="navLink"><a href="current-projects.html">Current Work</a></li>
+    </ul>
+
+    <div class="current-projects-grid">
+        <h1>Current Projects</h1>
+        <div class="project">
+            <h2>Excel-like Functionality Research</h2>
+            <p>I am currently working on researching JavaScript libraries that can be used to add Excel-like functionalities to data on a web page. The main focus areas of this research include:</p>
+            <ul>
+                <li>Checking licenses for possible forking on GitHub</li>
+                <li>Evaluating TypeScript support</li>
+                <li>Exploring API support</li>
+                <li>Investigating various use cases</li>
+            </ul>
+            <p>This research aims to enhance web-based data manipulation capabilities, providing users with familiar spreadsheet-like features directly in the browser.</p>
+        </div>
+    
+    </div>
+
+    <footer>
+   
+        <div class="footer-container">
+          <div class="contact-list">
+            <a href="mailto:smithsaruni16@gmail.com" class="contact-item" target="_blank" rel="noopener noreferrer" >
+              <i class="fas fa-envelope"></i>
+              <span>Email</span>
+            </a>
+            <a href="https://www.linkedin.com/in/moses-saruni-ba6653234" class="contact-item" target="_blank" rel="noopener noreferrer" >
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/saruni-spec/" class="contact-item" target="_blank" rel="noopener noreferrer" >
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+           
+          </div>
+        <div class="hosted">
+          <a href="https://github.com/saruni-spec/resume" class="git-links" target="_blank" rel="noopener noreferrer">My portfolio</a>
+        <a href="https://github.com/saruni-spec/2Hand" class="git-links" target="_blank" rel="noopener noreferrer">Nuria</a>
+      <a href="https://github.com/saruni-spec/witness" class="git-links" target="_blank" rel="noopener noreferrer">Reform</a>
+        <a href="https://github.com/saruni-spec/kickoff" class="git-links" target="_blank" rel="noopener noreferrer">Kickofff</a>
+        <a href="https://github.com/saruni-spec/TheFool" class="git-links" target="_blank" rel="noopener noreferrer">Wise Fool</a>
+       
+      </div>
+        <div class="unhosted">
+    
+          <a href="https://github.com/saruni-spec/boss1" class="git-links" target="_blank" rel="noopener noreferrer">
+            Dairy Management
+            <p>
+              A business management system for a dairy business to track payments and sales, manage milk stock, and monitor the overall performance of the business.
+            </p>
+          </a>
+        <a href="https://github.com/saruni-spec/Metro" class="git-links" target="_blank" rel="noopener noreferrer">
+    Bus booking App
+    
+      <p>
+      MetroBus Booking App is designed to simplify the process of booking bus rides in a busy metropolitan area. Whether you're commuting, heading to an appointment, or exploring the city, this app makes it easy to find and book bus rides in real-time.
+    </p>
+    
+    
+        </a>
+        <a href="https://github.com/saruni-spec/SmartTravel" class="git-links" target="_blank" rel="noopener noreferrer">
+    Bus booking Website
+    <p>Smart Travel is a website designed to simplify the process of booking bus rides in a busy metropolitan area.</p>
+    
+        </a>
+        </div>
+        
+       
+      </div>
+     
+     
+      </footer>
+
+      <script>
+        const cursor = document.createElement('div');
+    cursor.className = 'cursor-trail';
+    document.body.appendChild(cursor);
+    
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+      createParticle(e.pageX, e.pageY);
+    });
+    
+    function createParticle(x, y) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+      document.body.appendChild(particle);
+      setTimeout(() => particle.remove(), 300);
+    }
+      </script>
+</body>
+</html>

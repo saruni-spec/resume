@@ -39,7 +39,7 @@
         <span>n</span>
         <span>i</span>
       </a></li>
-     
+   
       <li class="navLink"><a href="#my_projects">Projects</a></li>
      
       <li class="navLink"><a href="#contact-form">Contact</a></li>
@@ -65,8 +65,8 @@
       <div class="about-content">
         <div class="personal">
           <p class="console-text">I’m Saruni,a fullstack developer</p>
-          <p class="console-text">I've built and contributed to projects ranging from e-commerce to business management systems and more recently, innovative social media and football analysis tools.</p>
-          <p class="console-text">When I’m not coding, you’ll find me immersed in writing stories, working on my blog 'The Wise Fool,' or brainstorming new ways to make tech accessible and fun. Let's solve some problems together and bring ideas to life!</p>
+          <p class="console-text">I'm working on enhancing my skills in JavaScript libraries and exploring new ways to improve user authentication systems. </p>
+          <p class="console-text">When I’m not coding, you’ll find me immersed in writing stories, working on my blog 'The Wise Fool,' or brainstorming new ways to make tech accessible and fun</p>
         </div>
         
         <div class="professional">
@@ -106,19 +106,7 @@
           </div>
         </div>
     
-        <div class="project-div parallax-project">
-          <div class="project-image" style="background-image: url('/witness.png');">
-            <a href="https://reform-nation.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-              Visit Site
-            </a>
-          </div>
-          <div class="project-details">
-            <h2><a href="https://reform-nation.web.app/" target="_blank" rel="noopener noreferrer" >Reform</a></h2>
-            <p>Activist Platform</p>
-            <p>Reform is a platform aimed at activists, providing a space for organizing movements, raising awareness, and sharing resources to promote social justice initiatives.</p>
-            <p><strong>Tech Stack:</strong> React, Firebase</p>
-          </div>
-        </div>
+        
     
         <div class="project-div parallax-project">
           <div class="project-details">
@@ -207,6 +195,12 @@
    
   </div>
     <div class="unhosted">
+      <a href="https://github.com/saruni-spec/school" class="git-links" target="_blank" rel="noopener noreferrer">
+        School Management
+        <p>
+          A school management system designed to simplify the process of managing student records, tracking academic performance, and monitoring school activities.
+        </p>
+      </a>
 
       <a href="https://github.com/saruni-spec/boss1" class="git-links" target="_blank" rel="noopener noreferrer">
         Dairy Management
@@ -236,7 +230,18 @@ Bus booking Website
  
   </footer>
  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+const hobbyItems = document.querySelectorAll('.hobby-item');
 
+hobbyItems.forEach((item, index) => {
+  setTimeout(() => {
+    item.textContent = item.dataset.text;
+    item.style.animation = 'typing 2s steps(20, end) forwards';
+  }, index * 2000);
+});
+});
+  </script>
   
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -305,18 +310,7 @@ function createParticle(x, y) {
     window.sendForm= sendForm;
    </script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-  const hobbyItems = document.querySelectorAll('.hobby-item');
-
-  hobbyItems.forEach((item, index) => {
-    setTimeout(() => {
-      item.textContent = item.dataset.text;
-      item.style.animation = 'typing 2s steps(20, end) forwards';
-    }, index * 2000);
-  });
-});
-    </script>
+    
    
     
   </body>
