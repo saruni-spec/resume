@@ -88,16 +88,17 @@
     <div id="projects">
     
       <div class="project-div parallax-project">
+        
+        <div class="project-image" style="background-image: url('/nuria.png');">
+          <a href="https://nuria.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+            Visit Site
+          </a>
+        </div>
         <div class="project-details">
           <h2><a href="https://nuria.web.app/" target="_blank" rel="noopener noreferrer" >Nuria</a></h2>
           <p>E-Commerce</p>
           <p>Nuria is a fully-featured e-commerce platform allowing users to browse, purchase, and sell used uniform online. It provides seamless shopping experiences with a focus on user-friendly navigation and responsive design.</p>
           <p><strong>Tech Stack:</strong> React, Firebase</p>
-        </div>
-        <div class="project-image" style="background-image: url('/nuria.png');">
-          <a href="https://nuria.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-            Visit Site
-          </a>
         </div>
       </div>
       <div class="project-div parallax-project">
@@ -107,7 +108,7 @@
           <p>This catalog site is designed for Brian Technologies, showcasing their products and services. It features an easy-to-navigate product catalog to explore the businesse's offerings.</p>
           <p><strong>Tech Stack:</strong> HTML,CSS,JS</p>
         </div>
-      <div class="project-image" style="background-image: url('/brian.png');">
+        <div class="project-image" style="background-image: url('/brian.png');">
         <a href="https://briantech.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
           Visit Site
         </a>
@@ -249,7 +250,7 @@ Bus booking Website
       // Check if the project is in the viewport
       if (projectTop < windowHeight && projectBottom > 0) {
         const scrollPercentage = (windowHeight - projectTop) / windowHeight;
-        const moveAmount = scrollPercentage * -400; // Adjust this value to control the parallax intensity
+        const moveAmount = scrollPercentage * -200; // Adjust this value to control the parallax intensity
 
         project.style.transform = `translateY(${moveAmount}px)`;
         

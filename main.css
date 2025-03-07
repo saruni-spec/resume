@@ -316,6 +316,8 @@ a span:hover {
   .project-image {
     transition: transform 0.2s ease-out;
   }
+  
+
  
 @media screen and (max-width:800px) {
  
