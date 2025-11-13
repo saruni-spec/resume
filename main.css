@@ -382,3 +382,67 @@ a span:hover {
     
       
 }
+
+
+
+/* Add this to your main.css file */
+
+/* View All Projects Button Styling */
+.view-all-projects {
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+
+.view-all-btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 1rem 2rem;
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px var(--highlight-color);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.view-all-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: var(--highlight-color);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: -1;
+}
+
+.view-all-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.view-all-btn:hover {
+  color: #000;
+  border-color: var(--highlight-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 800px) {
+  .view-all-projects {
+    padding: 2rem 0;
+  }
+
+  .view-all-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}

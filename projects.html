@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Browse all projects by Moses Saruni - Web development, E-commerce, blogging, and more." />
+    <meta name="keywords" content="Saruni, Moses Saruni, Portfolio, Projects, Web Development" />
+    <meta name="author" content="Moses Saruni" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="All Projects - Saruni Portfolio" />
+    <meta property="og:description" content="Browse all projects by Moses Saruni" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="footer.css"/>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>All Projects - Saruni Portfolio</title>
+    <style>
+      .projects-page-header {
+        margin-top: 15vh;
+        padding: 4rem 2rem 2rem;
+        text-align: center;
+      }
+
+      .projects-page-header h1 {
+        font-size: 3rem;
+        color: var(--highlight-color);
+        text-shadow: 0 0 10px var(--highlight-color);
+        margin-bottom: 1rem;
+      }
+
+      .filter-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 2rem 0;
+        padding: 0 2rem;
+      }
+
+      .filter-btn {
+        background-color: var(--secondary-color);
+        border: 2px solid var(--accent-color);
+        color: var(--contrast-color);
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Courier New', monospace;
+        font-size: 1rem;
+        text-shadow: 0 0 5px var(--highlight-color);
+      }
+
+      .filter-btn:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .filter-btn.active {
+        background-color: var(--highlight-color);
+        color: #000;
+        border-color: var(--highlight-color);
+        text-shadow: none;
+      }
+
+      .projects-grid-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        min-height: 60vh;
+        padding: 2rem 0;
+      }
+
+      .projects-grid-wrapper::before,
+      .projects-grid-wrapper::after {
+        content: '';
+        position: absolute;
+        width: 80vw;
+        height: 800vh;
+        top: -50%;
+        left: -50%;
+        background: radial-gradient(circle, var(--contrast-color) 10%, transparent 30%);
+        background-size: 15px 10px;
+        opacity: 0.07;
+        animation: backgroundMove 10s linear infinite;
+        z-index: -1;
+      }
+
+      .projects-grid-wrapper::after {
+        top: -45%;
+        left: -55%;
+        animation-duration: 90s;
+      }
+
+      @keyframes backgroundMove {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        100% { transform: translate(-50px, -50px) rotate(360deg); }
+      }
+
+      #all-projects {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .project-div {
+        min-height: 45vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 3vh;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease, margin 0.5s ease;
+      }
+
+      .project-div.hidden {
+        opacity: 0;
+        transform: translateY(20px);
+        height: 0;
+        min-height: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .project-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 50%;
+        margin: 1rem;
+        color: var(--contrast-color);
+      }
+
+      .project-image {
+        width: 40%;
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: inset 0.5px -0.5px 7px 1.5px var(--highlight-color);
+      }
+
+      .project-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .project-image:hover {
+        transform: scale(0.9);
+        filter: brightness(0.8);
+      }
+
+      .project-image:hover::before {
+        opacity: 0.5;
+      }
+
+      .project-image:hover a {
+        opacity: 1;
+        transform: translateY(-15px) scale(1.1);
+        transition: transform 300ms;
+      }
+
+      .project-link {
+        opacity: 0;
+        margin-top: 10px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: transform 800ms, opacity 0.3s ease;
+      }
+
+      .project-link:hover {
+        opacity: 2;
+      }
+
+      .back-to-home {
+        text-align: center;
+        padding: 3rem 0;
+      }
+
+      .back-btn {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+        padding: 1rem 2rem;
+        border: 2px solid var(--accent-color);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Courier New', monospace;
+        font-size: 1rem;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .back-btn:hover {
+        background-color: var(--highlight-color);
+        border-color: var(--highlight-color);
+        color: #000;
+        transform: translateY(-2px);
+      }
+
+      @media screen and (max-width: 800px) {
+        .projects-page-header h1 {
+          font-size: 2rem;
+        }
+
+        .filter-container {
+          gap: 0.5rem;
+          padding: 0 1rem;
+        }
+
+        .filter-btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+        }
+
+        .project-div {
+          height: 30vh;
+          width: 95%;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .project-link {
+          opacity: 1;
+          z-index: 5;
+          transform: translateY(5rem) translateX(7rem);
+        }
+
+        .project-details {
+          display: none;
+        }
+
+        .project-image {
+          width: 100%;
+          min-height: 20vh;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+    </style>
+</head>
+<body>
+  <ul id="nav">
+    <li id="title">
+      <a href="index.html">
+        <span>S</span>
+        <span>a</span>
+        <span>r</span>
+        <span>u</span>
+        <span>n</span>
+        <span>i</span>
+      </a>
+    </li>
+    <li class="navLink"><a href="index.html#my_projects">Featured</a></li>
+    <li class="navLink"><a href="index.html#contact-form">Contact</a></li>
+  </ul>
+  <div id="scroll-watcher"></div>
+
+  <div class="projects-page-header">
+    <h1>All Projects</h1>
+    <p class="console-text">Explore my complete portfolio of work</p>
+  </div>
+
+  <div class="filter-container">
+    <!-- Filter buttons will be dynamically inserted here -->
+  </div>
+
+  <div class="projects-grid-wrapper">
+    <div id="all-projects">
+      <!-- Projects will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <div class="back-to-home">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="contact-list">
+        <a href="mailto:smithsaruni16@gmail.com" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-envelope"></i>
+          <span>Email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/moses-saruni-ba6653234" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/saruni-spec/" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div class="hosted">
+        <a href="https://github.com/saruni-spec/resume" class="git-links" target="_blank" rel="noopener noreferrer">My portfolio</a>
+        <a href="https://github.com/saruni-spec/2Hand" class="git-links" target="_blank" rel="noopener noreferrer">Nuria</a>
+        <a href="https://github.com/saruni-spec/witness" class="git-links" target="_blank" rel="noopener noreferrer">Reform</a>
+        <a href="https://github.com/saruni-spec/kickoff" class="git-links" target="_blank" rel="noopener noreferrer">Kickoff</a>
+        <a href="https://github.com/saruni-spec/TheFool" class="git-links" target="_blank" rel="noopener noreferrer">Wise Fool</a>
+      </div>
+      <div class="unhosted">
+        <a href="https://github.com/saruni-spec/school" class="git-links" target="_blank" rel="noopener noreferrer">
+          School Management
+          <p>A school management system designed to simplify the process of managing student records, tracking academic performance, and monitoring school activities.</p>
+        </a>
+        <a href="https://github.com/saruni-spec/boss1" class="git-links" target="_blank" rel="noopener noreferrer">
+          Dairy Management
+          <p>A business management system for a dairy business to track payments and sales, manage milk stock, and monitor the overall performance of the business.</p>
+        </a>
+        <a href="https://github.com/saruni-spec/Metro" class="git-links" target="_blank" rel="noopener noreferrer">
+          Bus booking App
+          <p>MetroBus Booking App is designed to simplify the process of booking bus rides in a busy metropolitan area.</p>
+        </a>
+        <a href="https://github.com/saruni-spec/SmartTravel" class="git-links" target="_blank" rel="noopener noreferrer">
+          Bus booking Website
+          <p>Smart Travel is a website designed to simplify the process of booking bus rides in a busy metropolitan area.</p>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Load project data -->
+  <script src="projects-data.js"></script>
+
+  <!-- Render all projects with filtering -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const projectsContainer = document.getElementById('all-projects');
+      const filterContainer = document.querySelector('.filter-container');
+      const categories = getCategories();
+      let currentFilter = 'All';
+
+      // Create filter buttons
+      categories.forEach(category => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        if (category === 'All') btn.classList.add('active');
+        btn.textContent = category;
+        btn.onclick = () => filterProjectsBy(category);
+        filterContainer.appendChild(btn);
+      });
+
+      // Render all projects initially
+      function renderProjects(projectsToRender) {
+        projectsContainer.innerHTML = '';
+        
+        projectsToRender.forEach((project, index) => {
+          const projectDiv = document.createElement('div');
+          projectDiv.className = 'project-div';
+          projectDiv.dataset.category = project.category;
+
+          const isEven = index % 2 === 0;
+          
+          const projectHTML = `
+            ${isEven ? `
+              <div class="project-image" style="background-image: url('${project.image}');">
+                ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
+              </div>
+              <div class="project-details">
+                <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
+                <p>${project.category}</p>
+                <p>${project.description}</p>
+                <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
+                ${project.github ? `<p><a href="${project.github}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a></p>` : ''}
+              </div>
+            ` : `
+              <div class="project-details">
+                <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
+                <p>${project.category}</p>
+                <p>${project.description}</p>
+                <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
+                ${project.github ? `<p><a href="${project.github}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a></p>` : ''}
+              </div>
+              <div class="project-image" style="background-image: url('${project.image}');">
+                ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
+              </div>
+            `}
+          `;
+
+          projectDiv.innerHTML = projectHTML;
+          projectsContainer.appendChild(projectDiv);
+        });
+      }
+
+      // Filter projects by category
+      function filterProjectsBy(category) {
+        currentFilter = category;
+        
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.textContent === category) {
+            btn.classList.add('active');
+          }
+        });
+
+        // Get filtered projects
+        const filteredProjects = filterProjects(category);
+        
+        // Hide all projects first
+        const allProjectDivs = document.querySelectorAll('.project-div');
+        allProjectDivs.forEach(div => {
+          div.classList.add('hidden');
+        });
+
+        // Wait for hide animation, then re-render
+        setTimeout(() => {
+          renderProjects(filteredProjects);
+          
+          // Trigger show animation
+          requestAnimationFrame(() => {
+            document.querySelectorAll('.project-div').forEach((div, index) => {
+              setTimeout(() => {
+                div.style.opacity = '1';
+                div.style.transform = 'translateY(0)';
+              }, index * 100);
+            });
+          });
+        }, 500);
+      }
+
+      // Initial render
+      renderProjects(projects);
+
+      // Scroll watcher animation
+      const scrollWatcher = document.getElementById('scroll-watcher');
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrolled / height) * 100;
+        scrollWatcher.style.width = progress + '%';
+      });
+    });
+  </script>
+
+  <!-- Mouse particles -->
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      createParticle(e.pageX, e.pageY);
+    });
+
+    function createParticle(x, y) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+      document.body.appendChild(particle);
+      setTimeout(() => particle.remove(), 300);
+    }
+  </script>
+</body>
+</html>
