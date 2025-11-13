@@ -244,6 +244,14 @@ function getProjectById(id) {
   return projects.find((p) => p.id === id);
 }
 
+if (typeof window !== "undefined") {
+  window.projects = projects;
+  window.getCategories = getCategories;
+  window.filterProjects = filterProjects;
+  window.getFeaturedProjects = getFeaturedProjects;
+  window.getProjectById = getProjectById;
+}
+
 // Export for use in other files
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
