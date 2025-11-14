@@ -1,71 +1,329 @@
 #contact-form {
-    padding: 4rem 6rem;
-   
-    color: var(--contrast-color);
+  padding: 6rem 6rem 4rem;
+  color: var(--contrast-color);
+  position: relative;
+  overflow: hidden;
+}
+
+#contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--highlight-color), 
+    transparent
+  );
+  animation: scanline-horizontal 3s linear infinite;
+}
+
+@keyframes scanline-horizontal {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+#contact-form h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px var(--highlight-color);
+  position: relative;
+}
+
+#contact-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: var(--highlight-color);
+  box-shadow: 0 0 10px var(--highlight-color);
+}
+
+#contact-form > p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+#project-inquiry {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 1.5rem;
+}
+
+/* Holographic Input Fields */
+#project-inquiry input,
+#project-inquiry textarea {
+  margin-bottom: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--highlight-color);
+  color: var(--contrast-color);
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#project-inquiry input::placeholder,
+#project-inquiry textarea::placeholder {
+  color: var(--highlight-color);
+  opacity: 0.5;
+  font-family: 'Courier New', monospace;
+}
+
+/* Scanning effect on focus */
+#project-inquiry input:focus,
+#project-inquiry textarea:focus {
+  outline: none;
+  border-color: var(--blue-accent);
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 
+    0 0 30px rgba(0, 212, 255, 0.3),
+    inset 0 0 30px rgba(0, 212, 255, 0.1);
+  animation: holographic-scan 2s ease-in-out infinite;
+}
+
+@keyframes holographic-scan {
+  0%, 100% {
+    box-shadow: 
+      0 0 30px rgba(0, 212, 255, 0.3),
+      inset 0 0 30px rgba(0, 212, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(0, 212, 255, 0.5),
+      inset 0 0 40px rgba(0, 212, 255, 0.2);
+  }
+}
+
+/* Validation indicators */
+#project-inquiry input:valid:not(:placeholder-shown),
+#project-inquiry textarea:valid:not(:placeholder-shown) {
+  border-color: #00ff88;
+  background: rgba(0, 255, 136, 0.05);
+}
+
+#project-inquiry input:valid:not(:placeholder-shown)::after,
+#project-inquiry textarea:valid:not(:placeholder-shown)::after {
+  content: '✓';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00ff88;
+  font-size: 1.2rem;
+  animation: checkmark-appear 0.3s ease-out;
+}
+
+@keyframes checkmark-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+#project-inquiry input:invalid:not(:placeholder-shown):not(:focus),
+#project-inquiry textarea:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: var(--accompany-color);
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Holographic Button */
+#project-inquiry button {
+  background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+  color: var(--contrast-color);
+  padding: 1.2rem 2rem;
+  border: 2px solid var(--highlight-color);
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 5px 25px rgba(255, 140, 0, 0.3);
+}
+
+#project-inquiry button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+#project-inquiry button:hover::before {
+  left: 100%;
+}
+
+#project-inquiry button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 30px rgba(255, 140, 0, 0.5),
+    0 0 30px var(--highlight-color);
+  border-color: var(--blue-accent);
+}
+
+#project-inquiry button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 15px rgba(255, 140, 0, 0.3);
+}
+
+/* Transmission animation (after submit) */
+@keyframes transmission {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+}
+
+.transmitting {
+  animation: transmission 1s ease-out forwards;
+  pointer-events: none;
+}
+
+/* Success message */
+.transmission-success {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  border: 2px solid #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  animation: success-appear 0.5s ease-out;
+}
+
+.transmission-success.show {
+  display: block;
+}
+
+@keyframes success-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.transmission-success::before {
+  content: '>>> ';
+  color: var(--highlight-color);
+}
+
+.transmission-success::after {
+  content: ' <<<';
+  color: var(--highlight-color);
+}
+
+.budget-slider {
+  margin-bottom: 0;
+}
+
+.budget-slider label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--highlight-color);
+  font-family: 'Courier New', monospace;
+}
+
+#budget {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--secondary-color);
+  outline: none;
+  border: 1px solid var(--highlight-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#budget:hover {
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
+}
+
+#budget::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--highlight-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#budget::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px var(--highlight-color);
+}
+
+#budget::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px var(--highlight-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#budget::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px var(--highlight-color);
+}
+
+@media screen and (max-width:800px) {
+  #contact-form {
+    padding: 4rem 2rem 2rem;
+  }
+  
+  #contact-form h2 {
+    font-size: 2rem;
   }
   
   #project-inquiry {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-   
+    max-width: 100%;
   }
-  
-  #project-inquiry input,
-  #project-inquiry textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--accent-color);
-    color: var(--contrast-color);
-  }
-  
-  #project-inquiry button {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    padding: 0.5rem;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #project-inquiry button:hover {
-    background-color: var(--highlight-color);
-  }
-
-  .budget-slider {
-    margin-bottom: 1rem;
-  }
-  
-  .budget-slider label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  #budget {
-    width: 100%;
-    -webkit-appearance: none;
-    height: 10px;
-    border-radius: 5px;
-    background: var(--secondary-color);
-    outline: none;
-  }
-  
-  #budget::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--accent-color);
-    cursor: pointer;
-  }
-  
-  #budget::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--accent-color);
-    cursor: pointer;
-  }
-  @media screen and (max-width:800px) {}
+}

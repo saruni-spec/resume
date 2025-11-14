@@ -26,6 +26,213 @@
     <title>Saruni Portfolio</title>
 </head>
 <body class="allForOne">
+  <!-- Add this to the very top of your <body> tag in index.html -->
+<div id="boot-sequence" class="boot-sequence">
+  <div class="boot-content">
+    <div class="boot-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-letter">S</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <div class="boot-text">
+      <p class="boot-line"><span class="boot-prompt">&gt;</span> INITIALIZING PORTFOLIO SYSTEM...</p>
+      <p class="boot-line"><span class="boot-prompt">&gt;</span> LOADING COMPONENTS<span class="dots"></span></p>
+      <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> PROJECTS MODULE</p>
+      <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> SKILLS DATABASE</p>
+      <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> CONTACT INTERFACE</p>
+      <p class="boot-line"><span class="boot-prompt">&gt;</span> SYSTEM READY</p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.boot-sequence {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 0.5s ease-out 3.5s forwards;
+}
+
+.boot-content {
+  text-align: center;
+}
+
+.boot-logo {
+  font-size: 6rem;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 2rem;
+  animation: logoGlow 2s ease-in-out infinite;
+}
+
+.logo-bracket {
+  color: var(--highlight-color);
+  text-shadow: 0 0 20px var(--highlight-color);
+}
+
+.logo-letter {
+  color: var(--blue-accent);
+  text-shadow: 0 0 30px var(--blue-accent);
+  animation: letterPulse 1s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes letterPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.boot-text {
+  font-family: 'Courier New', monospace;
+  color: var(--highlight-color);
+  text-align: left;
+  font-size: 1rem;
+}
+
+.boot-line {
+  margin: 0.5rem 0;
+  opacity: 0;
+  animation: lineAppear 0.3s ease-out forwards;
+}
+
+.boot-line:nth-child(1) { animation-delay: 0.2s; }
+.boot-line:nth-child(2) { animation-delay: 0.6s; }
+.boot-line:nth-child(3) { animation-delay: 1.2s; }
+.boot-line:nth-child(4) { animation-delay: 1.6s; }
+.boot-line:nth-child(5) { animation-delay: 2s; }
+.boot-line:nth-child(6) { animation-delay: 2.4s; }
+
+@keyframes lineAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.boot-prompt {
+  color: var(--blue-accent);
+  margin-right: 0.5rem;
+}
+
+.boot-success {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.dots::after {
+  content: '';
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+.progress-bar {
+  width: 300px;
+  height: 6px;
+  background: rgba(255, 140, 0, 0.2);
+  border: 1px solid var(--highlight-color);
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: lineAppear 0.3s ease-out 2.6s forwards;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--highlight-color), var(--blue-accent));
+  width: 0;
+  animation: fillProgress 1s ease-out 2.6s forwards;
+  box-shadow: 0 0 10px var(--highlight-color);
+}
+
+@keyframes fillProgress {
+  to { width: 100%; }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Skip button for return visitors */
+.skip-boot {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 140, 0, 0.2);
+  border: 1px solid var(--highlight-color);
+  color: var(--highlight-color);
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: lineAppear 0.3s ease-out 1s forwards;
+}
+
+.skip-boot:hover {
+  background: var(--highlight-color);
+  color: #000;
+  box-shadow: 0 0 15px var(--highlight-color);
+}
+
+@media screen and (max-width: 800px) {
+  .boot-logo {
+    font-size: 4rem;
+  }
+  
+  .boot-text {
+    font-size: 0.8rem;
+  }
+  
+  .progress-bar {
+    width: 250px;
+  }
+}
+</style>
+
+<script>
+// Skip boot sequence
+document.addEventListener('DOMContentLoaded', () => {
+  const bootSequence = document.getElementById('boot-sequence');
+  const skipBtn = document.createElement('button');
+  skipBtn.className = 'skip-boot';
+  skipBtn.textContent = 'SKIP >>';
+  skipBtn.onclick = () => {
+    bootSequence.style.animation = 'fadeOut 0.3s ease-out forwards';
+  };
+  bootSequence.appendChild(skipBtn);
+  
+  // Remove boot sequence from DOM after animation
+  setTimeout(() => {
+    bootSequence.remove();
+  }, 4500);
+});
+</script>
   <ul id="nav">
     <li id="title">
       <a href="#profile">
@@ -150,53 +357,75 @@
 
   <!-- Render featured projects -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const projectsContainer = document.getElementById('projects');
-      const featuredProjects = getFeaturedProjects();
+    // Render featured projects
+document.addEventListener('DOMContentLoaded', () => {
+  const projectsContainer = document.getElementById('projects');
+  const featuredProjects = getFeaturedProjects();
 
-      featuredProjects.forEach((project, index) => {
-        const projectDiv = document.createElement('div');
-        projectDiv.className = 'project-div parallax-project';
+  featuredProjects.forEach((project, index) => {
+    const projectDiv = document.createElement('div');
+    projectDiv.className = 'project-div parallax-project';
 
-        const isEven = index % 2 === 0;
-        
-        const projectHTML = `
-          ${isEven ? `
-            <div class="project-image" style="background-image: url('${project.image}');">
-              ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
-            </div>
-            <div class="project-details">
-              <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
-              <p>${project.category}</p>
-              <p>${project.description}</p>
-              <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
-            </div>
-          ` : `
-            <div class="project-details">
-              <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
-              <p>${project.category}</p>
-              <p>${project.description}</p>
-              <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
-            </div>
-            <div class="project-image" style="background-image: url('${project.image}');">
-              ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
-            </div>
-          `}
-        `;
+    const isEven = index % 2 === 0;
+    
+    // Check if image exists or is placeholder
+    const isPlaceholder = project.image.includes('placeholder');
+    const imageClass = isPlaceholder ? 'project-image placeholder' : 'project-image';
+    
+    // Create placeholder content if needed
+    const placeholderContent = isPlaceholder ? `
+      <div class="placeholder-content">
+        <div class="placeholder-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="placeholder-text">${project.title}</div>
+      </div>
+    ` : '';
+    
+    const projectHTML = `
+      ${isEven ? `
+        <div class="${imageClass}" style="background-image: url('${project.image}');">
+          ${placeholderContent}
+          ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
+        </div>
+        <div class="project-details">
+          <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
+          <p>${project.category}</p>
+          <p>${project.description}</p>
+          <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
+        </div>
+      ` : `
+        <div class="project-details">
+          <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
+          <p>${project.category}</p>
+          <p>${project.description}</p>
+          <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
+        </div>
+        <div class="${imageClass}" style="background-image: url('${project.image}');">
+          ${placeholderContent}
+          ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
+        </div>
+      `}
+    `;
 
-        projectDiv.innerHTML = projectHTML;
-        projectsContainer.appendChild(projectDiv);
-      });
+    projectDiv.innerHTML = projectHTML;
+projectsContainer.appendChild(projectDiv);
 
-      // Hobby items animation
-      const hobbyItems = document.querySelectorAll('.hobby-item');
-      hobbyItems.forEach((item, index) => {
-        setTimeout(() => {
-          item.textContent = item.dataset.text;
-          item.style.animation = 'typing 2s steps(20, end) forwards';
-        }, index * 2000);
-      });
-    });
+// Trigger reveal animation
+setTimeout(() => {
+  projectDiv.classList.add('reveal');
+}, 100 * index); // Stagger the animations
+  });
+
+  // Hobby items animation (keep existing)
+  const hobbyItems = document.querySelectorAll('.hobby-item');
+  hobbyItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.textContent = item.dataset.text;
+      item.style.animation = 'typing 2s steps(20, end) forwards';
+    }, index * 2000);
+  });
+});
   </script>
 
   <!-- Parallax effect -->

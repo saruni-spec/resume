@@ -1,6 +1,3 @@
-// Project Data Structure
-// To add a new project, copy the template below and fill in your details
-
 const projects = [
   {
     id: 1,
@@ -210,9 +207,9 @@ const projects = [
 // Template for adding new projects:
 /*
 {
-  id: 17, // Increment this number
+  id: 10, // Increment this number
   title: "Project Name",
-  category: "E-Commerce", // Options: E-Commerce, Blog, Catalog, Sports, Management, Mobile, Web App, AI/FinTech, AI/E-Commerce, GeoSpatial/Data, AI/HealthTech
+  category: "E-Commerce", // Options: E-Commerce, Blog, Catalog, Sports, Management, Mobile, Web App
   description: "Detailed description of your project...",
   techStack: ["Tech1", "Tech2", "Tech3"], // Array of technologies used
   image: "/your-image.png", // Path to project image

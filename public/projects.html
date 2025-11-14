@@ -147,7 +147,7 @@
         background-position: center;
         transition: transform 0.3s ease, filter 0.3s ease;
         position: relative;
-        border-radius: 8px;
+     
         box-shadow: inset 0.5px -0.5px 7px 1.5px var(--highlight-color);
       }
 
@@ -357,46 +357,63 @@
       });
 
       // Render all projects initially
-      function renderProjects(projectsToRender) {
-        projectsContainer.innerHTML = '';
-        
-        projectsToRender.forEach((project, index) => {
-          const projectDiv = document.createElement('div');
-          projectDiv.className = 'project-div';
-          projectDiv.dataset.category = project.category;
+      // Render all projects initially
+function renderProjects(projectsToRender) {
+  projectsContainer.innerHTML = '';
+  
+  projectsToRender.forEach((project, index) => {
+    const projectDiv = document.createElement('div');
+    projectDiv.className = 'project-div';
+    projectDiv.dataset.category = project.category;
 
-          const isEven = index % 2 === 0;
-          
-          const projectHTML = `
-            ${isEven ? `
-              <div class="project-image" style="background-image: url('${project.image}');">
-                ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
-              </div>
-              <div class="project-details">
-                <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
-                <p>${project.category}</p>
-                <p>${project.description}</p>
-                <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
-                ${project.github ? `<p><a href="${project.github}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a></p>` : ''}
-              </div>
-            ` : `
-              <div class="project-details">
-                <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
-                <p>${project.category}</p>
-                <p>${project.description}</p>
-                <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
-                ${project.github ? `<p><a href="${project.github}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a></p>` : ''}
-              </div>
-              <div class="project-image" style="background-image: url('${project.image}');">
-                ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
-              </div>
-            `}
-          `;
+    const isEven = index % 2 === 0;
+    
+    // Check if image exists or is placeholder
+    const isPlaceholder = project.image.includes('placeholder');
+    const imageClass = isPlaceholder ? 'project-image placeholder' : 'project-image';
+    
+    // Create placeholder content if needed
+    const placeholderContent = isPlaceholder ? `
+      <div class="placeholder-content">
+        <div class="placeholder-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="placeholder-text">${project.title}</div>
+      </div>
+    ` : '';
+    
+    const projectHTML = `
+      ${isEven ? `
+        <div class="${imageClass}" style="background-image: url('${project.image}');">
+          ${placeholderContent}
+          ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
+        </div>
+        <div class="project-details">
+          <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
+          <p>${project.category}</p>
+          <p>${project.description}</p>
+          <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
+          ${project.github ? `<p><a href="${project.github}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a></p>` : ''}
+        </div>
+      ` : `
+        <div class="project-details">
+          <h2>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title}</h2>
+          <p>${project.category}</p>
+          <p>${project.description}</p>
+          <p><strong>Tech Stack:</strong> ${project.techStack.join(', ')}</p>
+          ${project.github ? `<p><a href="${project.github}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a></p>` : ''}
+        </div>
+        <div class="${imageClass}" style="background-image: url('${project.image}');">
+          ${placeholderContent}
+          ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site</a>` : ''}
+        </div>
+      `}
+    `;
 
-          projectDiv.innerHTML = projectHTML;
-          projectsContainer.appendChild(projectDiv);
-        });
-      }
+    projectDiv.innerHTML = projectHTML;
+    projectsContainer.appendChild(projectDiv);
+  });
+}
 
       // Filter projects by category
       function filterProjectsBy(category) {
