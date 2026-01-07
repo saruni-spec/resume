@@ -1,0 +1,610 @@
+/* ===================================================
+   STYLES.CSS - Base Styles & Design System
+   Consolidated from: style.css, clean-enhancements.css
+   =================================================== */
+
+/* -------------------------------------------------
+   1. FONTS & CSS VARIABLES
+   ------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    /* Typography */
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+
+    /* Light mode - Clean, modern & professional */
+    color: #334155;
+    background-color: #ffffff;
+    --background-color: #ffffff;
+    --primary-color: #ffffff;
+    --secondary-color: rgba(100, 116, 139, 0.1);
+    --tertiary-color: #1e293b;
+    --accent-color: #6366f1;
+    --accompany-color: #f43f5e;
+    --contrast-color: #0f172a;
+    --complement-color: #64748b;
+    --highlight-color: #14b8a6;
+    --blue-accent: #3b82f6;
+
+    /* Rendering */
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color: rgba(245, 245, 245, 0.87);
+        background-color: #0a0a0a;
+        --secondary-color: rgba(170, 170, 170, 0.281);
+        --tertiary-color: #2c3e50;
+        --accent-color: rgb(80, 37, 233);
+        --primary-color: #0a0a0a;
+        --accompany-color: rgb(248, 33, 33);
+        --contrast-color: white;
+        --complement-color: rgb(88, 88, 88);
+        --highlight-color: coral;
+        --blue-accent: #00d4ff;
+    }
+}
+
+/* -------------------------------------------------
+   2. BASE RESET & BODY STYLES
+   ------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    min-height: 100svh;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur116.cur), auto !important;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* -------------------------------------------------
+   3. CRT EFFECTS (Refined)
+   ------------------------------------------------- */
+/* Scanline Effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.05) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: scanline 8s linear infinite;
+}
+
+/* Flicker Effect (Subtle) */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    pointer-events: none;
+    z-index: 9998;
+    animation: flicker 0.15s infinite;
+    opacity: 0.02;
+    /* Refined: much more subtle */
+}
+
+/* -------------------------------------------------
+   4. LINKS
+   ------------------------------------------------- */
+a {
+    color: var(--highlight-color);
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+    /* Refined: softer glow */
+    text-decoration: none;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur106.cur), pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--highlight-color);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+a:hover {
+    color: var(--blue-accent);
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+    /* Refined: softer glow */
+}
+
+/* -------------------------------------------------
+   5. FORM ELEMENTS (Base)
+   ------------------------------------------------- */
+input,
+textarea,
+button {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--highlight-color);
+    color: var(--highlight-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--blue-accent);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+button {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--highlight-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #000;
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 20px var(--highlight-color);
+}
+
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* -------------------------------------------------
+   6. UTILITY CLASSES
+   ------------------------------------------------- */
+.console-text,
+.project-details p,
+.project-details h2 {
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 4px rgba(255, 140, 0, 0.4);
+    /* Refined: softer glow */
+    display: inline-block;
+}
+
+.console-text {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* -------------------------------------------------
+   7. CURSOR & PARTICLE EFFECTS
+   ------------------------------------------------- */
+.cursor-trail {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--highlight-color);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.4;
+    animation: cursorFade 0.5s ease-out forwards;
+}
+
+/* Subtle ring particle on mouse move */
+.particle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--highlight-color);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.3;
+    animation: particleFade 0.4s ease-out forwards;
+}
+
+@keyframes particleFade {
+    to {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+.click-ripple {
+    position: absolute;
+    border: 2px solid var(--highlight-color);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: rippleExpand 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Code rain background (subtle) */
+.code-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.code-char {
+    position: absolute;
+    color: var(--highlight-color);
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    opacity: 0.1;
+    animation: fall linear infinite;
+}
+
+/* -------------------------------------------------
+   8. SHARED KEYFRAMES
+   ------------------------------------------------- */
+@keyframes scanline {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(4px);
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.27861;
+    }
+
+    5% {
+        opacity: 0.34769;
+    }
+
+    10% {
+        opacity: 0.23604;
+    }
+
+    15% {
+        opacity: 0.90626;
+    }
+
+    20% {
+        opacity: 0.18128;
+    }
+
+    25% {
+        opacity: 0.83891;
+    }
+
+    30% {
+        opacity: 0.65583;
+    }
+
+    35% {
+        opacity: 0.67807;
+    }
+
+    40% {
+        opacity: 0.26559;
+    }
+
+    45% {
+        opacity: 0.84693;
+    }
+
+    50% {
+        opacity: 0.96019;
+    }
+
+    55% {
+        opacity: 0.08594;
+    }
+
+    60% {
+        opacity: 0.20313;
+    }
+
+    65% {
+        opacity: 0.71988;
+    }
+
+    70% {
+        opacity: 0.53455;
+    }
+
+    75% {
+        opacity: 0.37288;
+    }
+
+    80% {
+        opacity: 0.71428;
+    }
+
+    85% {
+        opacity: 0.70419;
+    }
+
+    90% {
+        opacity: 0.7003;
+    }
+
+    95% {
+        opacity: 0.36108;
+    }
+
+    100% {
+        opacity: 0.24387;
+    }
+}
+
+@keyframes cursorFade {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes particleFloat {
+    to {
+        opacity: 0;
+        transform: translateY(-30px) scale(1.5);
+    }
+}
+
+@keyframes rippleExpand {
+    from {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    to {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Shared: shake animation (used by projects title and form validation) */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-1px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(1px);
+    }
+}
+
+/* Shared: float animation (used by skill icons) */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Shared: pulse animation (used by skill hub and icons) */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Glitch animations for name and project title */
+@keyframes glitch-1 {
+
+    0%,
+    100% {
+        clip-path: inset(50% 0 30% 0);
+    }
+
+    20% {
+        clip-path: inset(33% 0 66% 0);
+    }
+
+    40% {
+        clip-path: inset(10% 0 61% 0);
+    }
+
+    60% {
+        clip-path: inset(83% 0 5% 0);
+    }
+
+    80% {
+        clip-path: inset(92% 0 3% 0);
+    }
+}
+
+@keyframes glitch-2 {
+
+    0%,
+    100% {
+        clip-path: inset(25% 0 58% 0);
+    }
+
+    20% {
+        clip-path: inset(75% 0 5% 0);
+    }
+
+    40% {
+        clip-path: inset(46% 0 14% 0);
+    }
+
+    60% {
+        clip-path: inset(72% 0 19% 0);
+    }
+
+    80% {
+        clip-path: inset(15% 0 94% 0);
+    }
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip-path: inset(40% 0 61% 0);
+    }
+
+    20% {
+        clip-path: inset(92% 0 1% 0);
+    }
+
+    40% {
+        clip-path: inset(43% 0 1% 0);
+    }
+
+    60% {
+        clip-path: inset(25% 0 58% 0);
+    }
+
+    80% {
+        clip-path: inset(54% 0 7% 0);
+    }
+
+    100% {
+        clip-path: inset(58% 0 43% 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip-path: inset(25% 0 58% 0);
+    }
+
+    20% {
+        clip-path: inset(54% 0 7% 0);
+    }
+
+    40% {
+        clip-path: inset(58% 0 43% 0);
+    }
+
+    60% {
+        clip-path: inset(40% 0 61% 0);
+    }
+
+    80% {
+        clip-path: inset(92% 0 1% 0);
+    }
+
+    100% {
+        clip-path: inset(43% 0 1% 0);
+    }
+}
+
+@keyframes intenseGlitch {
+
+    0%,
+    100% {
+        transform: translate(0) scale(1.05);
+    }
+
+    20% {
+        transform: translate(-5px, 2px) scale(1.05);
+    }
+
+    40% {
+        transform: translate(-5px, -2px) scale(1.05);
+    }
+
+    60% {
+        transform: translate(5px, 2px) scale(1.05);
+    }
+
+    80% {
+        transform: translate(5px, -2px) scale(1.05);
+    }
+}
+
+/* -------------------------------------------------
+   9. MOBILE BASE STYLES
+   ------------------------------------------------- */
+@media screen and (max-width: 800px) {
+    body {
+        padding: 0;
+    }
+
+    body::before {
+        background-size: 100% 3px;
+    }
+}

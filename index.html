@@ -1,238 +1,285 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="A portfolio for Saruni showcasing projects in web development,E-commerce, blogging, catalog, and sports entertainment." />
-    <meta name="keywords" content="Saruni, Moses Saruni, Portfolio, E-commerce, Blog, Catalog, Sports, Web Development, Projects" />
-    <meta name="author" content="Moses Saruni" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Saruni Portfolio" />
-    <meta property="og:description" content="A portfolio for Saruni showcasing various projects." />
-    <meta property="og:image" content="/public/icon.png" />
-    <meta property="og:url" content="https://saruni-portfolio.netlify.app/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Saruni Portfolio" />
-    <meta name="twitter:description" content="A portfolio for Saruni showcasing various projects." />
-    <link rel="stylesheet"  href="style.css" />
-    <link rel="stylesheet"  href="main.css" />
-    <link rel="stylesheet"  href="form.css" />
-    <link rel="stylesheet"  href="profile.css" />
-    <link rel="stylesheet"  href="about.css" />
-    <link rel="stylesheet"  href="contact.css" />
-    <link rel="stylesheet" href="footer.css"/>
-    <link rel="icon" href="icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://cdn.emailjs.com">
-    <title>Saruni Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="description"
+    content="A portfolio for Saruni showcasing projects in web development,E-commerce, blogging, catalog, and sports entertainment." />
+  <meta name="keywords"
+    content="Saruni, Moses Saruni, Portfolio, E-commerce, Blog, Catalog, Sports, Web Development, Projects" />
+  <meta name="author" content="Moses Saruni" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Saruni Portfolio" />
+  <meta property="og:description" content="A portfolio for Saruni showcasing various projects." />
+  <meta property="og:image" content="/public/icon.png" />
+  <meta property="og:url" content="https://saruni-portfolio.netlify.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Saruni Portfolio" />
+  <meta name="twitter:description" content="A portfolio for Saruni showcasing various projects." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="components.css" />
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="preconnect" href="https://cdn.emailjs.com">
+  <title>Saruni Portfolio</title>
 </head>
+
 <body class="allForOne">
   <!-- Add this to the very top of your <body> tag in index.html -->
-<div id="boot-sequence" class="boot-sequence">
-  <div class="boot-content">
-    <div class="boot-logo">
-      <span class="logo-bracket">[</span>
-      <span class="logo-letter">S</span>
-      <span class="logo-bracket">]</span>
-    </div>
-    <div class="boot-text">
-      <p class="boot-line"><span class="boot-prompt">&gt;</span> INITIALIZING PORTFOLIO SYSTEM...</p>
-      <p class="boot-line"><span class="boot-prompt">&gt;</span> LOADING COMPONENTS<span class="dots"></span></p>
-      <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> PROJECTS MODULE</p>
-      <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> SKILLS DATABASE</p>
-      <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> CONTACT INTERFACE</p>
-      <p class="boot-line"><span class="boot-prompt">&gt;</span> SYSTEM READY</p>
-      <div class="progress-bar">
-        <div class="progress-fill"></div>
+  <div id="boot-sequence" class="boot-sequence">
+    <div class="boot-content">
+      <div class="boot-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-letter">S</span>
+        <span class="logo-bracket">]</span>
+      </div>
+      <div class="boot-text">
+        <p class="boot-line"><span class="boot-prompt">&gt;</span> INITIALIZING PORTFOLIO SYSTEM...</p>
+        <p class="boot-line"><span class="boot-prompt">&gt;</span> LOADING COMPONENTS<span class="dots"></span></p>
+        <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> PROJECTS
+          MODULE</p>
+        <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> SKILLS
+          DATABASE</p>
+        <p class="boot-line"><span class="boot-prompt">&gt;</span> <span class="boot-success">[OK]</span> CONTACT
+          INTERFACE</p>
+        <p class="boot-line"><span class="boot-prompt">&gt;</span> SYSTEM READY</p>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<style>
-.boot-sequence {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  z-index: 10000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeOut 0.5s ease-out 3.5s forwards;
-}
+  <style>
+    .boot-sequence {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeOut 0.5s ease-out 3.5s forwards;
+    }
 
-.boot-content {
-  text-align: center;
-}
+    .boot-content {
+      text-align: center;
+    }
 
-.boot-logo {
-  font-size: 6rem;
-  font-family: 'Courier New', monospace;
-  margin-bottom: 2rem;
-  animation: logoGlow 2s ease-in-out infinite;
-}
+    .boot-logo {
+      font-size: 6rem;
+      font-family: 'Courier New', monospace;
+      margin-bottom: 2rem;
+      animation: logoGlow 2s ease-in-out infinite;
+    }
 
-.logo-bracket {
-  color: var(--highlight-color);
-  text-shadow: 0 0 20px var(--highlight-color);
-}
+    .logo-bracket {
+      color: var(--highlight-color);
+      text-shadow: 0 0 20px var(--highlight-color);
+    }
 
-.logo-letter {
-  color: var(--blue-accent);
-  text-shadow: 0 0 30px var(--blue-accent);
-  animation: letterPulse 1s ease-in-out infinite;
-}
+    .logo-letter {
+      color: var(--blue-accent);
+      text-shadow: 0 0 30px var(--blue-accent);
+      animation: letterPulse 1s ease-in-out infinite;
+    }
 
-@keyframes logoGlow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
+    @keyframes logoGlow {
 
-@keyframes letterPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
+      0%,
+      100% {
+        opacity: 1;
+      }
 
-.boot-text {
-  font-family: 'Courier New', monospace;
-  color: var(--highlight-color);
-  text-align: left;
-  font-size: 1rem;
-}
+      50% {
+        opacity: 0.7;
+      }
+    }
 
-.boot-line {
-  margin: 0.5rem 0;
-  opacity: 0;
-  animation: lineAppear 0.3s ease-out forwards;
-}
+    @keyframes letterPulse {
 
-.boot-line:nth-child(1) { animation-delay: 0.2s; }
-.boot-line:nth-child(2) { animation-delay: 0.6s; }
-.boot-line:nth-child(3) { animation-delay: 1.2s; }
-.boot-line:nth-child(4) { animation-delay: 1.6s; }
-.boot-line:nth-child(5) { animation-delay: 2s; }
-.boot-line:nth-child(6) { animation-delay: 2.4s; }
+      0%,
+      100% {
+        transform: scale(1);
+      }
 
-@keyframes lineAppear {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+      50% {
+        transform: scale(1.1);
+      }
+    }
 
-.boot-prompt {
-  color: var(--blue-accent);
-  margin-right: 0.5rem;
-}
+    .boot-text {
+      font-family: 'Courier New', monospace;
+      color: var(--highlight-color);
+      text-align: left;
+      font-size: 1rem;
+    }
 
-.boot-success {
-  color: #00ff88;
-  font-weight: bold;
-}
+    .boot-line {
+      margin: 0.5rem 0;
+      opacity: 0;
+      animation: lineAppear 0.3s ease-out forwards;
+    }
 
-.dots::after {
-  content: '';
-  animation: dots 1.5s infinite;
-}
+    .boot-line:nth-child(1) {
+      animation-delay: 0.2s;
+    }
 
-@keyframes dots {
-  0%, 20% { content: '.'; }
-  40% { content: '..'; }
-  60%, 100% { content: '...'; }
-}
+    .boot-line:nth-child(2) {
+      animation-delay: 0.6s;
+    }
 
-.progress-bar {
-  width: 300px;
-  height: 6px;
-  background: rgba(255, 140, 0, 0.2);
-  border: 1px solid var(--highlight-color);
-  margin-top: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  animation: lineAppear 0.3s ease-out 2.6s forwards;
-}
+    .boot-line:nth-child(3) {
+      animation-delay: 1.2s;
+    }
 
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--highlight-color), var(--blue-accent));
-  width: 0;
-  animation: fillProgress 1s ease-out 2.6s forwards;
-  box-shadow: 0 0 10px var(--highlight-color);
-}
+    .boot-line:nth-child(4) {
+      animation-delay: 1.6s;
+    }
 
-@keyframes fillProgress {
-  to { width: 100%; }
-}
+    .boot-line:nth-child(5) {
+      animation-delay: 2s;
+    }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
+    .boot-line:nth-child(6) {
+      animation-delay: 2.4s;
+    }
 
-/* Skip button for return visitors */
-.skip-boot {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  padding: 0.5rem 1rem;
-  background: rgba(255, 140, 0, 0.2);
-  border: 1px solid var(--highlight-color);
-  color: var(--highlight-color);
-  font-family: 'Courier New', monospace;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0;
-  animation: lineAppear 0.3s ease-out 1s forwards;
-}
+    @keyframes lineAppear {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
 
-.skip-boot:hover {
-  background: var(--highlight-color);
-  color: #000;
-  box-shadow: 0 0 15px var(--highlight-color);
-}
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
-@media screen and (max-width: 800px) {
-  .boot-logo {
-    font-size: 4rem;
-  }
-  
-  .boot-text {
-    font-size: 0.8rem;
-  }
-  
-  .progress-bar {
-    width: 250px;
-  }
-}
-</style>
+    .boot-prompt {
+      color: var(--blue-accent);
+      margin-right: 0.5rem;
+    }
 
-<script>
-// Skip boot sequence
-document.addEventListener('DOMContentLoaded', () => {
-  const bootSequence = document.getElementById('boot-sequence');
-  const skipBtn = document.createElement('button');
-  skipBtn.className = 'skip-boot';
-  skipBtn.textContent = 'SKIP >>';
-  skipBtn.onclick = () => {
-    bootSequence.style.animation = 'fadeOut 0.3s ease-out forwards';
-  };
-  bootSequence.appendChild(skipBtn);
-  
-  // Remove boot sequence from DOM after animation
-  setTimeout(() => {
-    bootSequence.remove();
-  }, 4500);
-});
-</script>
+    .boot-success {
+      color: #00ff88;
+      font-weight: bold;
+    }
+
+    .dots::after {
+      content: '';
+      animation: dots 1.5s infinite;
+    }
+
+    @keyframes dots {
+
+      0%,
+      20% {
+        content: '.';
+      }
+
+      40% {
+        content: '..';
+      }
+
+      60%,
+      100% {
+        content: '...';
+      }
+    }
+
+    .progress-bar {
+      width: 300px;
+      height: 6px;
+      background: rgba(255, 140, 0, 0.2);
+      border: 1px solid var(--highlight-color);
+      margin-top: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: lineAppear 0.3s ease-out 2.6s forwards;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--highlight-color), var(--blue-accent));
+      width: 0;
+      animation: fillProgress 1s ease-out 2.6s forwards;
+      box-shadow: 0 0 10px var(--highlight-color);
+    }
+
+    @keyframes fillProgress {
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* Skip button for return visitors */
+    .skip-boot {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 140, 0, 0.2);
+      border: 1px solid var(--highlight-color);
+      color: var(--highlight-color);
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: lineAppear 0.3s ease-out 1s forwards;
+    }
+
+    .skip-boot:hover {
+      background: var(--highlight-color);
+      color: #000;
+      box-shadow: 0 0 15px var(--highlight-color);
+    }
+
+    @media screen and (max-width: 800px) {
+      .boot-logo {
+        font-size: 4rem;
+      }
+
+      .boot-text {
+        font-size: 0.8rem;
+      }
+
+      .progress-bar {
+        width: 250px;
+      }
+    }
+  </style>
+
+  <script>
+    // Skip boot sequence
+    document.addEventListener('DOMContentLoaded', () => {
+      const bootSequence = document.getElementById('boot-sequence');
+      const skipBtn = document.createElement('button');
+      skipBtn.className = 'skip-boot';
+      skipBtn.textContent = 'SKIP >>';
+      skipBtn.onclick = () => {
+        bootSequence.style.animation = 'fadeOut 0.3s ease-out forwards';
+      };
+      bootSequence.appendChild(skipBtn);
+
+      // Remove boot sequence from DOM after animation
+      setTimeout(() => {
+        bootSequence.remove();
+      }, 4500);
+    });
+  </script>
   <ul id="nav">
     <li id="title">
       <a href="#profile">
@@ -248,9 +295,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <li class="navLink"><a href="#contact-form">Contact</a></li>
   </ul>
   <div id="scroll-watcher"></div>
-  
+
   <div id="profile">
-    <p class="name"><span id="moses" class="console-text">Moses</span><span id="saruni" class="console-text">Saruni</span></p>
+    <p class="name"><span id="moses" class="console-text">Moses</span><span id="saruni"
+        class="console-text">Saruni</span></p>
     <div id="hobbies" class="not-visible">
       <div id="terminal">
         <p class="console-text">> What do I do?</p>
@@ -264,11 +312,13 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
   <div class="about-content">
- <div class="personal">
-  <p class="console-text">I build things that matter. Okay—mostly.</p>
-  <p class="console-text">I specialize in AI integrations, WhatsApp-based platforms, Web Development and turning "that's impossible" into production code.</p>
-  <p class="console-text">Off the clock, I write 'The Wise Fool'— philosophy, irony, and the occasional existential crisis.</p>
-</div>
+    <div class="personal">
+      <p class="console-text">I build things that matter. Okay—mostly.</p>
+      <p class="console-text">I specialize in AI integrations, WhatsApp-based platforms, Web Development and turning
+        "that's impossible" into production code.</p>
+      <p class="console-text">Off the clock, I write 'The Wise Fool'— philosophy, irony, and the occasional existential
+        crisis.</p>
+    </div>
     <div class="professional">
       <p class="console-text">Tech Stack</p>
       <div class="skill-icons">
@@ -288,7 +338,9 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 
   <div class="projects-wrapper" id="my_projects">
-    <div class="projectTitle"><h2>Featured Projects</h2></div>
+    <div class="projectTitle">
+      <h2>Featured Projects</h2>
+    </div>
     <div id="projects">
       <!-- Projects will be dynamically inserted here -->
     </div>
@@ -315,7 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <i class="fas fa-envelope"></i>
           <span>Email</span>
         </a>
-        <a href="https://www.linkedin.com/in/moses-saruni-ba6653234" class="contact-item" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/moses-saruni-ba6653234" class="contact-item" target="_blank"
+          rel="noopener noreferrer">
           <i class="fab fa-linkedin"></i>
           <span>LinkedIn</span>
         </a>
@@ -325,28 +378,39 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
       </div>
       <div class="hosted">
-        <a href="https://github.com/saruni-spec/resume" class="git-links" target="_blank" rel="noopener noreferrer">My portfolio</a>
-        <a href="https://github.com/saruni-spec/2Hand" class="git-links" target="_blank" rel="noopener noreferrer">Nuria</a>
-        <a href="https://github.com/saruni-spec/witness" class="git-links" target="_blank" rel="noopener noreferrer">Reform</a>
-        <a href="https://github.com/saruni-spec/kickoff" class="git-links" target="_blank" rel="noopener noreferrer">Kickoff</a>
-        <a href="https://github.com/saruni-spec/TheFool" class="git-links" target="_blank" rel="noopener noreferrer">Wise Fool</a>
+        <a href="https://github.com/saruni-spec/resume" class="git-links" target="_blank" rel="noopener noreferrer">My
+          portfolio</a>
+        <a href="https://github.com/saruni-spec/2Hand" class="git-links" target="_blank"
+          rel="noopener noreferrer">Nuria</a>
+        <a href="https://github.com/saruni-spec/witness" class="git-links" target="_blank"
+          rel="noopener noreferrer">Reform</a>
+        <a href="https://github.com/saruni-spec/kickoff" class="git-links" target="_blank"
+          rel="noopener noreferrer">Kickoff</a>
+        <a href="https://github.com/saruni-spec/TheFool" class="git-links" target="_blank"
+          rel="noopener noreferrer">Wise Fool</a>
       </div>
       <div class="unhosted">
         <a href="https://github.com/saruni-spec/school" class="git-links" target="_blank" rel="noopener noreferrer">
           School Management
-          <p>A school management system designed to simplify the process of managing student records, tracking academic performance, and monitoring school activities.</p>
+          <p>A school management system designed to simplify the process of managing student records, tracking academic
+            performance, and monitoring school activities.</p>
         </a>
         <a href="https://github.com/saruni-spec/boss1" class="git-links" target="_blank" rel="noopener noreferrer">
           Dairy Management
-          <p>A business management system for a dairy business to track payments and sales, manage milk stock, and monitor the overall performance of the business.</p>
+          <p>A business management system for a dairy business to track payments and sales, manage milk stock, and
+            monitor the overall performance of the business.</p>
         </a>
         <a href="https://github.com/saruni-spec/Metro" class="git-links" target="_blank" rel="noopener noreferrer">
           Bus booking App
-          <p>MetroBus Booking App is designed to simplify the process of booking bus rides in a busy metropolitan area. Whether you're commuting, heading to an appointment, or exploring the city, this app makes it easy to find and book bus rides in real-time.</p>
+          <p>MetroBus Booking App is designed to simplify the process of booking bus rides in a busy metropolitan area.
+            Whether you're commuting, heading to an appointment, or exploring the city, this app makes it easy to find
+            and book bus rides in real-time.</p>
         </a>
-        <a href="https://github.com/saruni-spec/SmartTravel" class="git-links" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/saruni-spec/SmartTravel" class="git-links" target="_blank"
+          rel="noopener noreferrer">
           Bus booking Website
-          <p>Smart Travel is a website designed to simplify the process of booking bus rides in a busy metropolitan area.</p>
+          <p>Smart Travel is a website designed to simplify the process of booking bus rides in a busy metropolitan
+            area.</p>
         </a>
       </div>
     </div>
@@ -358,22 +422,22 @@ document.addEventListener('DOMContentLoaded', () => {
   <!-- Render featured projects -->
   <script>
     // Render featured projects
-document.addEventListener('DOMContentLoaded', () => {
-  const projectsContainer = document.getElementById('projects');
-  const featuredProjects = getFeaturedProjects();
+    document.addEventListener('DOMContentLoaded', () => {
+      const projectsContainer = document.getElementById('projects');
+      const featuredProjects = getFeaturedProjects();
 
-  featuredProjects.forEach((project, index) => {
-    const projectDiv = document.createElement('div');
-    projectDiv.className = 'project-div parallax-project';
+      featuredProjects.forEach((project, index) => {
+        const projectDiv = document.createElement('div');
+        projectDiv.className = 'project-div parallax-project';
 
-    const isEven = index % 2 === 0;
-    
-    // Check if image exists or is placeholder
-    const isPlaceholder = project.image.includes('placeholder');
-    const imageClass = isPlaceholder ? 'project-image placeholder' : 'project-image';
-    
-    // Create placeholder content if needed
-    const placeholderContent = isPlaceholder ? `
+        const isEven = index % 2 === 0;
+
+        // Check if image exists or is placeholder
+        const isPlaceholder = project.image.includes('placeholder');
+        const imageClass = isPlaceholder ? 'project-image placeholder' : 'project-image';
+
+        // Create placeholder content if needed
+        const placeholderContent = isPlaceholder ? `
       <div class="placeholder-content">
         <div class="placeholder-icon">
           <i class="fas fa-code"></i>
@@ -381,8 +445,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="placeholder-text">${project.title}</div>
       </div>
     ` : '';
-    
-    const projectHTML = `
+
+        const projectHTML = `
       ${isEven ? `
         <div class="${imageClass}" style="background-image: url('${project.image}');">
           ${placeholderContent}
@@ -408,24 +472,24 @@ document.addEventListener('DOMContentLoaded', () => {
       `}
     `;
 
-    projectDiv.innerHTML = projectHTML;
-projectsContainer.appendChild(projectDiv);
+        projectDiv.innerHTML = projectHTML;
+        projectsContainer.appendChild(projectDiv);
 
-// Trigger reveal animation
-setTimeout(() => {
-  projectDiv.classList.add('reveal');
-}, 100 * index); // Stagger the animations
-  });
+        // Trigger reveal animation
+        setTimeout(() => {
+          projectDiv.classList.add('reveal');
+        }, 100 * index); // Stagger the animations
+      });
 
-  // Hobby items animation (keep existing)
-  const hobbyItems = document.querySelectorAll('.hobby-item');
-  hobbyItems.forEach((item, index) => {
-    setTimeout(() => {
-      item.textContent = item.dataset.text;
-      item.style.animation = 'typing 2s steps(20, end) forwards';
-    }, index * 2000);
-  });
-});
+      // Hobby items animation (keep existing)
+      const hobbyItems = document.querySelectorAll('.hobby-item');
+      hobbyItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.textContent = item.dataset.text;
+          item.style.animation = 'typing 2s steps(20, end) forwards';
+        }, index * 2000);
+      });
+    });
   </script>
 
   <!-- Parallax effect -->
@@ -444,7 +508,7 @@ setTimeout(() => {
             const moveAmount = scrollPercentage * -200;
 
             project.style.transform = `translateY(${moveAmount}px)`;
-            
+
             const projectImage = project.querySelector('.project-image');
             if (projectImage) {
               projectImage.style.transform = `translateY(-${moveAmount * 0.5}px)`;
@@ -484,4 +548,5 @@ setTimeout(() => {
     window.sendForm = sendForm;
   </script>
 </body>
+
 </html>
