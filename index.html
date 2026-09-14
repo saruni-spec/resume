@@ -1,303 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="wise" data-view="term">
 <head>
-
-    <meta charset="UTF-8" />
-    <meta name="description" content="A portfolio for Saruni showcasing projects in web development,E-commerce, blogging, catalog, and sports entertainment." />
-    <meta name="keywords" content="Saruni, Moses Saruni, Portfolio, E-commerce, Blog, Catalog, Sports, Web Development, Projects" />
-    <meta name="author" content="Moses Saruni" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Saruni Portfolio" />
-    <meta property="og:description" content="A portfolio for Saruni showcasing various projects." />
-    <meta property="og:image" content="/public/icon.png" />
-    <meta property="og:url" content="https://saruni-portfolio.netlify.app/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Saruni Portfolio" />
-    <meta name="twitter:description" content="A portfolio for Saruni showcasing various projects." />
-    <link rel="stylesheet"  href="style.css" />
-    <link rel="stylesheet"  href="main.css" />
-    <link rel="stylesheet"  href="form.css" />
-    <link rel="stylesheet"  href="profile.css" />
-    <link rel="stylesheet"  href="about.css" />
-    <link rel="stylesheet"  href="contact.css" />
-    <link rel="stylesheet" href="footer.css"/>
-    <link rel="icon" href="icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-    <link rel="preconnect" href="https://cdn.emailjs.com">
-    <title>Saruni Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moses Saruni</title>
+  <meta name="description" content="Moses Saruni designs and builds WhatsApp platforms, AI agents and web apps in Nairobi. A portfolio you can use as a terminal." />
+  <meta name="author" content="Moses Saruni" />
+  <meta property="og:title" content="Moses Saruni" />
+  <meta property="og:description" content="WhatsApp platforms, AI agents and web apps. Open the terminal, or don't." />
+  <meta property="og:image" content="/icon.png" />
+  <meta property="og:url" content="https://saruni-portfolio.netlify.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" />
+  <link rel="stylesheet" href="/src/styles.css" />
 </head>
-<body class="allForOne">
-  <ul id="nav">
-    <li id="title">
-      <a href="#profile">
-        
-        <span>S</span>
-        <span>a</span>
-        <span>r</span>
-        <span>u</span>
-        <span>n</span>
-        <span>i</span>
-      </a>
-    </li>
-   
-    <li class="navLink"><a href="#my_projects">Projects</a></li>
-    
-    <li class="navLink"><a href="#contact-form">Contact</a></li>
-  </ul>
-  <div id="scroll-watcher"></div>
-  <div id="profile">
-    <p class="name"><span id="moses" class="console-text">Moses</span><span id="saruni" class="console-text">Saruni</span></p>
-    <div id="hobbies" class="not-visible">
-      <div id="terminal">
-        <p class="console-text">> What do I do?</p>
-        <div  >
-        <p class="console-text hobby-item" data-text="Design">_</p>
-        <p class="console-text hobby-item" data-text="<Code/>">_</p>
-        <p class="console-text hobby-item" data-text="Develop">_</p>
-        </div>
-      </div>
-    </div>
+<body>
+  <a class="skip" href="#gui" id="skip">Skip to the plain page</a>
+
+  <div id="deploy" hidden aria-hidden="true">
+    <pre></pre>
+    <p class="deploy-skip">Press any key to skip</p>
   </div>
-  <div class="about-content">
-    <div class="personal">
-      <p class="console-text">I’m Saruni,a fullstack developer</p>
-      <p class="console-text">I'm working on enhancing my skills in JavaScript libraries and exploring new ways to improve user authentication systems. </p>
-      <p class="console-text">When I’m not coding, you’ll find me immersed in writing stories, working on my blog 'The Wise Fool,' or brainstorming new ways to make tech accessible and fun</p>
-    </div>
-        
-    <div class="professional">
-      <p class="console-text">Tech Stack</p>
-      <div class="skill-icons">
-        <i class="floatIcon fab fa-html5" title="HTML5"></i>
-        <i class="floatIcon fab fa-css3-alt" title="CSS3"></i>
-        <i class="floatIcon fab fa-js-square" title="JavaScript"></i>
-        <i class="floatIcon fab fa-react" title="React"></i>
-        <i class="floatIcon fab fa-node-js" title="Node.js"></i>
-        <i class="floatIcon fab fa-python" title="Python"></i>
-        <i class="floatIcon fab fa-django" title="Django"></i>
-        <i class="floatIcon fas fa-database" title="Databases"></i>
-        <i class="floatIcon fab fa-git-alt" title="Git"></i>
-        <i class="floatIcon fab fa-aws" title="AWS"></i>
-        <i class="floatIcon fab fa-vuejs" title="Vercel"></i>
+
+  <main>
+    <section id="term" aria-label="Terminal" data-xray="Terminal · src/terminal.js">
+      <div class="term-scroll">
+        <div id="term-out" role="log" aria-live="polite"></div>
+        <form id="term-form" class="term-line" autocomplete="off">
+          <label for="term-in" class="prompt">saruni@portfolio:~$</label>
+          <input id="term-in" spellcheck="false" autocapitalize="off" autocorrect="off" aria-label="Type a command, or type help" />
+        </form>
       </div>
-    </div>
-  </div>
-  <div class="projects-wrapper" id="my_projects">
-    <div class="projectTitle"><h2>Projects</h2></div>
-    <div id="projects">
-    
-      <div class="project-div parallax-project">
-        
-        <div class="project-image" style="background-image: url('/nuria.png');">
-          <a href="https://nuria.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-            Visit Site
-          </a>
-        </div>
-        <div class="project-details">
-          <h2><a href="https://nuria.web.app/" target="_blank" rel="noopener noreferrer" >Nuria</a></h2>
-          <p>E-Commerce</p>
-          <p>Nuria is a fully-featured e-commerce platform allowing users to browse, purchase, and sell used uniform online. It provides seamless shopping experiences with a focus on user-friendly navigation and responsive design.</p>
-          <p><strong>Tech Stack:</strong> React, Firebase</p>
-        </div>
-      </div>
-      <div class="project-div parallax-project">
-        <div class="project-details">
-          <h2><a href="https://briantech.web.app/" target="_blank" rel="noopener noreferrer" >Brian Technologies</a></h2>
-          <p>Catalog</p>
-          <p>This catalog site is designed for Brian Technologies, showcasing their products and services. It features an easy-to-navigate product catalog to explore the businesse's offerings.</p>
-          <p><strong>Tech Stack:</strong> HTML,CSS,JS</p>
-        </div>
-        <div class="project-image" style="background-image: url('/brian.png');">
-        <a href="https://briantech.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-          Visit Site
-        </a>
-      </div>
-    </div>
-        <div class="project-div parallax-project">
-          <div class="project-image" style="background-image: url('/fool.png');">
-            <a href="https://wisefool.xyz" target="_blank" rel="noopener noreferrer" class="project-link">
-              Visit Site
-            </a>
-          </div>
-          <div class="project-details">
-            <h2>            <a href="https://wisefool.xyz" target="_blank" rel="noopener noreferrer" >Wise Fool</a></h2>
-            <p>Blog Site</p>
-            <p>Wise Fool is a personal blog site where I write about philosophy, psychology, science with a twist of humor and irony. The platform allows easy content management and publishing.</p>
-            <p><strong>Tech Stack:</strong> Python, Flask, SQLite, HTML/CSS</p>
-          </div>
-        </div>
-    
-        <div class="project-div parallax-project">
-          <div class="project-details">
-            <h2><a href="https://kickoff-challenge-football.web.app/" target="_blank" rel="noopener noreferrer" >Kick Off Challenge</a></h2>
-            <p>Sports Entertainment</p>
-            <p>Kick Off Challenge is a web app that compares football fixtures, providing head-to-head statistics and showcasing teams' progress over time. It includes dynamic data visualization and real-time updates.</p>
-            <p><strong>Tech Stack:</strong> Next.js</p>
-          </div>
-          <div class="project-image" style="background-image: url('/kickoff.png');">
-            <a href="https://kickoff-challenge-football.web.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-              Visit Site
-            </a>
-          </div>
-        </div>
-    
-      </div>
-    </div>
-    
+      <div class="chips" id="term-chips" data-xray="Command buttons · src/terminal.js"></div>
+    </section>
 
- <div id="contact-form">
-  <h2>Let's Work Together</h2>
-  <p>Interested in collaborating? Fill out the form below, and I'll get back to you soon!</p>
-  <form id="project-inquiry" onsubmit="sendForm(event)">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="project_details" placeholder="Tell me about your project" required></textarea>
-   
-    <button type="submit">Send Inquiry</button>
-  </form>
-</div>
-  
- 
-  
-  <footer>
-   
-    <div class="footer-container">
-      <div class="contact-list">
-        <a href="mailto:smithsaruni16@gmail.com" class="contact-item" target="_blank" rel="noopener noreferrer" >
-          <i class="fas fa-envelope"></i>
-          <span>Email</span>
-        </a>
-        <a href="https://www.linkedin.com/in/moses-saruni-ba6653234" class="contact-item" target="_blank" rel="noopener noreferrer" >
-          <i class="fab fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/saruni-spec/" class="contact-item" target="_blank" rel="noopener noreferrer" >
-          <i class="fab fa-github"></i>
-          <span>GitHub</span>
-        </a>
-       
-      </div>
-    <div class="hosted">
-      <a href="https://github.com/saruni-spec/resume" class="git-links" target="_blank" rel="noopener noreferrer">My portfolio</a>
-    <a href="https://github.com/saruni-spec/2Hand" class="git-links" target="_blank" rel="noopener noreferrer">Nuria</a>
-  <a href="https://github.com/saruni-spec/witness" class="git-links" target="_blank" rel="noopener noreferrer">Reform</a>
-    <a href="https://github.com/saruni-spec/kickoff" class="git-links" target="_blank" rel="noopener noreferrer">Kickofff</a>
-    <a href="https://github.com/saruni-spec/TheFool" class="git-links" target="_blank" rel="noopener noreferrer">Wise Fool</a>
-   
-  </div>
-    <div class="unhosted">
-      <a href="https://github.com/saruni-spec/school" class="git-links" target="_blank" rel="noopener noreferrer">
-        School Management
-        <p>
-          A school management system designed to simplify the process of managing student records, tracking academic performance, and monitoring school activities.
-        </p>
-      </a>
+    <div id="gui" tabindex="-1" data-xray="Plain page · src/gui.js"></div>
+  </main>
 
-      <a href="https://github.com/saruni-spec/boss1" class="git-links" target="_blank" rel="noopener noreferrer">
-        Dairy Management
-        <p>
-          A business management system for a dairy business to track payments and sales, manage milk stock, and monitor the overall performance of the business.
-        </p>
-      </a>
-    <a href="https://github.com/saruni-spec/Metro" class="git-links" target="_blank" rel="noopener noreferrer">
-Bus booking App
+  <nav id="status" aria-label="Views and modes" data-xray="Status bar · src/main.js"></nav>
+  <aside id="xray-log" hidden></aside>
 
-  <p>
-  MetroBus Booking App is designed to simplify the process of booking bus rides in a busy metropolitan area. Whether you're commuting, heading to an appointment, or exploring the city, this app makes it easy to find and book bus rides in real-time.
-</p>
-
-
-    </a>
-    <a href="https://github.com/saruni-spec/SmartTravel" class="git-links" target="_blank" rel="noopener noreferrer">
-Bus booking Website
-<p>Smart Travel is a website designed to simplify the process of booking bus rides in a busy metropolitan area.</p>
-
-    </a>
-    </div>
-    
-   
-  </div>
- 
- 
-</footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const hobbyItems = document.querySelectorAll('.hobby-item');
-
-    hobbyItems.forEach((item, index) => {
-      setTimeout(() => {
-        item.textContent = item.dataset.text;
-        item.style.animation = 'typing 2s steps(20, end) forwards';
-      }, index * 2000);
-    });
-    });
-</script>
-  
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const projects = document.querySelectorAll('.parallax-project');
-
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-
-    projects.forEach((project) => {
-      const projectTop = project.getBoundingClientRect().top;
-      const projectBottom = project.getBoundingClientRect().bottom;
-      const windowHeight = window.innerHeight;
-
-      // Check if the project is in the viewport
-      if (projectTop < windowHeight && projectBottom > 0) {
-        const scrollPercentage = (windowHeight - projectTop) / windowHeight;
-        const moveAmount = scrollPercentage * -200; // Adjust this value to control the parallax intensity
-
-        project.style.transform = `translateY(${moveAmount}px)`;
-        
-        // Move the project image in the opposite direction for added depth
-        const projectImage = project.querySelector('.project-image');
-        if (projectImage) {
-          projectImage.style.transform = `translateY(-${moveAmount * 0.5}px)`;
-        }
-      }
-    });
-  });
-});
-</script>
-
-<script>
-
-    document.addEventListener('mousemove', (e) => {
-      
-      createParticle(e.pageX, e.pageY);
-    
-    });
-
-    function createParticle(x, y) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = x + 'px';
-      particle.style.top = y + 'px';
-      document.body.appendChild(particle);
-      setTimeout(() => particle.remove(), 300);
-    }
-
-</script>
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="module">
-    import sendEmail from './email.js';
-    function sendForm(event) {
-      event.preventDefault();
-
-  const formData = new FormData(event.target);
-  const data = Object.fromEntries(formData);
-  sendEmail(data);
-
-  
-    }
-
-  window.sendForm= sendForm;
-</script>
-    
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
